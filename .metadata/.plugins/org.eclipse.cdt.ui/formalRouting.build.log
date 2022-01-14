@@ -1,0 +1,106 @@
+04:03:07 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project formalRouting ****
+make -j12 all 
+make: Warning: File 'c:\users\co-op shaheeer r\simplicitystudio\sdks\gecko_sdk\platform\device\siliconlabs\efr32fg14p\include\em_device.h' has modification time 16974 s in the future
+Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_prs_gpio_dma/src/main_gg11_xg14.c
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_adc.c
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_cmu.c
+Invoking: GNU ARM C Compiler
+Invoking: GNU ARM C Compiler
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_core.c
+Invoking: GNU ARM C Compiler
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_emu.c
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"emlib/em_adc.d" -MT"emlib/em_adc.o" -o "emlib/em_adc.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_adc.c"
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_gpio.c
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_gg11_xg14.d" -MT"src/main_gg11_xg14.o" -o "src/main_gg11_xg14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_prs_gpio_dma/src/main_gg11_xg14.c"
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"emlib/em_cmu.d" -MT"emlib/em_cmu.o" -o "emlib/em_cmu.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_cmu.c"
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"emlib/em_core.d" -MT"emlib/em_core.o" -o "emlib/em_core.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_core.c"
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"emlib/em_gpio.d" -MT"emlib/em_gpio.o" -o "emlib/em_gpio.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_gpio.c"
+Invoking: GNU ARM C Compiler
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_ldma.c
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_letimer.c
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"emlib/em_emu.d" -MT"emlib/em_emu.o" -o "emlib/em_emu.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_emu.c"
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_prs.c
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_system.c
+Invoking: GNU ARM C Compiler
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"emlib/em_prs.d" -MT"emlib/em_prs.o" -o "emlib/em_prs.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_prs.c"
+Invoking: GNU ARM C Compiler
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"emlib/em_letimer.d" -MT"emlib/em_letimer.o" -o "emlib/em_letimer.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_letimer.c"
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.S
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"emlib/em_ldma.d" -MT"emlib/em_ldma.o" -o "emlib/em_ldma.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_ldma.c"
+Building file: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.c
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"emlib/em_system.d" -MT"emlib/em_system.o" -o "emlib/em_system.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_system.c"
+Invoking: GNU ARM Assembler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" '-DEFR32FG14P233F256GM48=1' -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -x assembler-with-cpp -o "CMSIS/EFR32FG14P/startup_efr32fg14p.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.S"
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4259A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"CMSIS/EFR32FG14P/system_efr32fg14p.d" -MT"CMSIS/EFR32FG14P/system_efr32fg14p.o" -o "CMSIS/EFR32FG14P/system_efr32fg14p.o" "C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.c"
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.S
+ 
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_core.c
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_gpio.c
+Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_prs_gpio_dma/src/main_gg11_xg14.c
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_prs.c
+ 
+ 
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_adc.c
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_ldma.c
+ 
+ 
+ 
+ 
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_letimer.c
+ 
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_system.c
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.c
+ 
+ 
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_emu.c
+ 
+Finished building: C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk/platform/emlib/src/em_cmu.c
+ 
+Building target: formalRouting.axf
+Invoking: GNU ARM C Linker
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "formalRouting.ld" -Xlinker --gc-sections -Xlinker -Map="formalRouting.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o formalRouting.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_emu.o" "./emlib/em_gpio.o" "./emlib/em_ldma.o" "./emlib/em_letimer.o" "./emlib/em_prs.o" "./emlib/em_system.o" "./src/main_gg11_xg14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+Finished building target: formalRouting.axf
+ 
+Building hex file: formalRouting.hex
+arm-none-eabi-objcopy -O ihex "formalRouting.axf" "formalRouting.hex"
+ 
+Building bin file: formalRouting.bin
+arm-none-eabi-objcopy -O binary "formalRouting.axf" "formalRouting.bin"
+ 
+Building s37 file: formalRouting.s37
+arm-none-eabi-objcopy -O srec "formalRouting.axf" "formalRouting.s37"
+ 
+Running size tool
+arm-none-eabi-size "formalRouting.axf" -A
+formalRouting.axf  :
+section              size        addr
+.text                6308           0
+.ARM.exidx              8        6308
+.data                 148   536870912
+.bss                   92   536871060
+.heap                3072   536871152
+.stack_dummy         1024   536871152
+.ARM.attributes        46           0
+.comment               77           0
+.debug_line         48906           0
+.debug_info         73120           0
+.debug_abbrev        8541           0
+.debug_aranges       1344           0
+.debug_str        1316957           0
+.debug_loc          41693           0
+.debug_ranges        7640           0
+.debug_macro       194939           0
+.debug_frame         3836           0
+Total             1707751
+
+
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+
+04:03:09 Build Finished. 0 errors, 0 warnings. (took 2s.78ms)
+

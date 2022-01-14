@@ -1,0 +1,6 @@
+13:59:08 **** Incremental Build of configuration GNU ARM v10.2.1 - Default for project uartdrv_baremetal ****
+make -j12 all 
+make: Nothing to be done for 'all'.
+
+13:59:08 Build Finished. 0 errors, 0 warnings. (took 273ms)
+

@@ -1,0 +1,6 @@
+09:15:52 **** Incremental Build of configuration GNU ARM v10.2.1 - Default for project bootloader-uart-bgapi ****
+make -j12 all 
+make: Nothing to be done for 'all'.
+
+09:15:52 Build Finished. 0 errors, 0 warnings. (took 287ms)
+

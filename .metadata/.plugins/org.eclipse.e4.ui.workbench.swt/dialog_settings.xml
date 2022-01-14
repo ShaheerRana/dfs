@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ShowViewDialog">
+		<item key="ShowViewDialog.STORE_SELECTED_VIEW_ID" value="com.silabs.studio.energyprofiler.ui.views.LiveFunctionProfileView"/>
+		<item key="DIALOG_X_ORIGIN" value="1133"/>
+		<item key="DIALOG_Y_ORIGIN" value="416"/>
+		<item key="DIALOG_WIDTH" value="311"/>
+		<item key="DIALOG_HEIGHT" value="439"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		<list key="ShowViewDialog.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="General"/>
+			<item value="C/C++"/>
+			<item value="Debug"/>
+			<item value="Ember Desktop"/>
+			<item value="Simplicity Capacitive Sense Profiler"/>
+			<item value="Simplicity Configurator"/>
+			<item value="Simplicity Energy Profiler"/>
+			<item value="Simplicity Studio"/>
+			<item value="Team"/>
+			<item value="Other"/>
+		</list>
+	</section>
+</section>

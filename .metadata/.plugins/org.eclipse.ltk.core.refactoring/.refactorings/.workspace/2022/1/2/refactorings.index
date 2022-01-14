@@ -1,0 +1,7 @@
+1641283530762	Delete resource 'bootloader-uart-bgapi'
+1641283642376	Delete resource 'BRD4100A_EFR32BG1P_switch_led_polled'
+1641286597736	Delete resource 'SLSTK3301A_EFM32TG11B_adc_single_prs_gpio_dma'
+1641493388853	Delete resource 'uartdrv_baremetal_2'
+1641503328133	Delete resource 'BRD4257A_EFR32FG14P_adc_single_prs_gpio_dma_3'
+1641574824904	Delete resource 'adc_single_prs_gpio_dma'
+1641576016664	Delete resource 'BRD4257A_EFR32FG14P_ldma_single_looped/emlib/em_adc.h'

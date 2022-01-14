@@ -1,0 +1,6 @@
+09:28:30 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_prs_gpio_dma ****
+make -j12 all 
+make: Nothing to be done for 'all'.
+
+09:28:30 Build Finished. 0 errors, 0 warnings. (took 206ms)
+

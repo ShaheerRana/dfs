@@ -1,0 +1,6 @@
+11:20:49 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_ldma_single_looped ****
+make -j12 all 
+make: Nothing to be done for 'all'.
+
+11:20:49 Build Finished. 0 errors, 0 warnings. (took 158ms)
+

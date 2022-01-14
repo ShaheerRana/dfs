@@ -1,0 +1,49 @@
+13:54:24 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
+make -j12 all 
+Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -I"C:\SiliconLabs\SimplicityStudio\v5\developer\toolchains\gnu_arm\10.2_2020q4\/arm-none-eabi/include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_gg11_xg14.d" -MT"src/main_gg11_xg14.o" -o "src/main_gg11_xg14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c"
+Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
+ 
+Building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
+Invoking: GNU ARM C Linker
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_adc_single_polled.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_adc_single_polled.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_adc_single_polled.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_gpio.o" "./emlib/em_usart.o" "./src/main_gg11_xg14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+Finished building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
+ 
+Building hex file: BRD4257A_EFR32FG14P_adc_single_polled.hex
+arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.hex"
+ 
+Building bin file: BRD4257A_EFR32FG14P_adc_single_polled.bin
+arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.bin"
+ 
+Building s37 file: BRD4257A_EFR32FG14P_adc_single_polled.s37
+arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.s37"
+ 
+Running size tool
+arm-none-eabi-size "BRD4257A_EFR32FG14P_adc_single_polled.axf" -A
+BRD4257A_EFR32FG14P_adc_single_polled.axf  :
+section              size        addr
+.text                2620           0
+.ARM.exidx              8        2620
+.data                 124   536870912
+.bss                   32   536871036
+.heap                3072   536871072
+.stack_dummy         1024   536871072
+.ARM.attributes        46           0
+.comment               77           0
+.debug_line         31831           0
+.debug_info         42480           0
+.debug_abbrev        5177           0
+.debug_aranges        936           0
+.debug_str        1290570           0
+.debug_loc          27100           0
+.debug_ranges        4840           0
+.debug_macro       189464           0
+.debug_frame         2512           0
+Total             1601913
+
+
+ 
+
+13:54:26 Build Finished. 0 errors, 0 warnings. (took 1s.525ms)
+
