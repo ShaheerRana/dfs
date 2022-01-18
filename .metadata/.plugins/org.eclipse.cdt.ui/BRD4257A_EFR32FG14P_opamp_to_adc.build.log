@@ -1,4 +1,4 @@
-13:16:04 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_opamp_to_adc ****
+12:35:12 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_opamp_to_adc ****
 make -j12 all 
 Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/opamp/opamp_to_adc/src/main_radio14.c
 Invoking: GNU ARM C Compiler
@@ -23,27 +23,27 @@ Running size tool
 arm-none-eabi-size "BRD4257A_EFR32FG14P_opamp_to_adc.axf" -A
 BRD4257A_EFR32FG14P_opamp_to_adc.axf  :
 section              size        addr
-.text                3656           0
-.ARM.exidx              8        3656
+.text                3784           0
+.ARM.exidx              8        3784
 .data                 120   536870912
 .bss                   36   536871032
 .heap                3072   536871072
 .stack_dummy         1024   536871072
 .ARM.attributes        46           0
 .comment               77           0
-.debug_line         31175           0
-.debug_info         47583           0
+.debug_line         31228           0
+.debug_info         47629           0
 .debug_abbrev        4909           0
 .debug_aranges        824           0
-.debug_str        1292138           0
+.debug_str        1292150           0
 .debug_loc          25704           0
 .debug_ranges        4408           0
 .debug_macro       189038           0
-.debug_frame         2232           0
-Total             1606050
+.debug_frame         2244           0
+Total             1606301
 
 
  
 
-13:16:06 Build Finished. 0 errors, 0 warnings. (took 1s.470ms)
+12:35:14 Build Finished. 0 errors, 0 warnings. (took 1s.476ms)
 

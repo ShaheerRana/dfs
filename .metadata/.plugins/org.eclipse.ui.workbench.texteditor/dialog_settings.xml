@@ -6,8 +6,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="TRI"/>
+		<item key="selection" value="APORT1YCH7"/>
 		<list key="findhistory">
+			<item value="APORT1YCH7"/>
+			<item value="PosSelAPORT1YCH7"/>
+			<item value="adcPosSelAPORT1YCH7"/>
+			<item value="VDAC_OPA_MUX_RESSEL_RES0"/>
 			<item value="tri"/>
 			<item value="usart0"/>
 			<item value="opa"/>
@@ -19,10 +23,6 @@
 			<item value="linkload"/>
 			<item value="link"/>
 			<item value="CHEN"/>
-			<item value="loop"/>
-			<item value="decLoopCnt"/>
-			<item value="adc0"/>
-			<item value="LDMA_IRQHandler"/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>

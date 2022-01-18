@@ -3,6 +3,7 @@
 	<section name="com.silabs.ss.framework.ide.project.core.cdtMbsProjectType">
 		<item key="importOption" value="LINK"/>
 		<list key="fileLocationHistory">
+			<item value="C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\BRD4257A_EFR32FG14P_opamp_to_adc"/>
 			<item value="C:\Users\Co-op Shaheeer R\peripheral_examples\series1\opamp\opamp_to_adc\SimplicityStudio"/>
 			<item value="C:\Users\Co-op Shaheeer R\peripheral_examples\series1\ldma\ldma_single_looped\SimplicityStudio"/>
 			<item value="C:\Users\Co-op Shaheeer R\peripheral_examples\series1\adc\adc_single_polled\SimplicityStudio"/>
@@ -10,7 +11,7 @@
 			<item value="C:\Users\Co-op Shaheeer R\peripheral_examples\series1\adc\adc_single_prs_gpio_dma\SimplicityStudio"/>
 		</list>
 		<list key="fileLocations">
-			<item value="C:\Users\Co-op Shaheeer R\peripheral_examples\series1\opamp\opamp_to_adc\SimplicityStudio"/>
+			<item value="C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\BRD4257A_EFR32FG14P_opamp_to_adc"/>
 		</list>
 	</section>
 </section>
