@@ -3154,3 +3154,51 @@ java.lang.InterruptedException
 	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:207)
 	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:220)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+!SESSION 2022-01-20 08:15:31.502 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.5
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.silabs.ss.platform.jetty.server 1 0 2022-01-20 08:15:35.799
+!MESSAGE ContentServer started at: 127.0.0.1, 64591
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-01-20 08:15:35.829
+!MESSAGE com.silabs.ss.tool.launcher.product found! Writing main studio shared file
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-01-20 08:16:11.328
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.tool.installer.core 2 0 2022-01-20 08:16:20.974
+!MESSAGE Problem getting package resources: changelog
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-01-20 08:16:27.084
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.support.browser.html 1 0 2022-01-20 08:54:23.178
+!MESSAGE Browser workarea set to: C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\.browser
+
+!ENTRY com.silabs.ss.tool.installer.core 2 0 2022-01-20 08:54:49.458
+!MESSAGE Problem getting package resources: changelog
+
+!ENTRY com.silabs.ss.tool.installer.core 1 0 2022-01-20 08:55:14.661
+!MESSAGE Successfully updated Studio installation. Total work: 1.0
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-01-20 08:57:02.850
+!MESSAGE Deleted Shared Daemon File: C:\Users\Co-op Shaheeer R\.uc\cli\mainstudio.running
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-01-20 08:57:02.856
+!MESSAGE Deleted Shared Daemon Version File: C:\Users\Co-op Shaheeer R\.uc\cli\mainstudio.running.version
+!SESSION 2022-01-20 08:57:03.444 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.5
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.silabs.ss.platform.jetty.server 1 0 2022-01-20 08:57:07.434
+!MESSAGE ContentServer started at: 127.0.0.1, 64939
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-01-20 08:57:07.455
+!MESSAGE com.silabs.ss.tool.launcher.product found! Writing main studio shared file
