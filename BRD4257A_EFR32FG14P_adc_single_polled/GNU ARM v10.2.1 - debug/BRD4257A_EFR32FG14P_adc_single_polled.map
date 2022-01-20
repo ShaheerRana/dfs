@@ -149,10 +149,6 @@ Discarded input sections
  .text          0x00000000        0x0 ./emlib/em_adc.o
  .data          0x00000000        0x0 ./emlib/em_adc.o
  .bss           0x00000000        0x0 ./emlib/em_adc.o
- .text.ADC_LoadDevinfoCal
-                0x00000000       0xec ./emlib/em_adc.o
- .text.ADC_Init
-                0x00000000       0xbc ./emlib/em_adc.o
  .text.ADC_ScanInputClear
                 0x00000000       0x14 ./emlib/em_adc.o
  .text.ADC_ScanSingleEndedInputAdd
@@ -161,25 +157,12 @@ Discarded input sections
                 0x00000000       0xfc ./emlib/em_adc.o
  .text.ADC_InitScan
                 0x00000000       0xa0 ./emlib/em_adc.o
- .text.ADC_InitSingle
-                0x00000000       0xb0 ./emlib/em_adc.o
  .text.ADC_DataIdScanGet
                 0x00000000        0xc ./emlib/em_adc.o
- .text.ADC_PrescaleCalc
-                0x00000000       0x44 ./emlib/em_adc.o
  .text.ADC_Reset
                 0x00000000       0xbc ./emlib/em_adc.o
- .text.ADC_TimebaseCalc
-                0x00000000       0x30 ./emlib/em_adc.o
  .rodata.CSWTCH.8
                 0x00000000       0x14 ./emlib/em_adc.o
- .debug_info    0x00000000     0x20f6 ./emlib/em_adc.o
- .debug_abbrev  0x00000000      0x3a7 ./emlib/em_adc.o
- .debug_loc     0x00000000     0x10e5 ./emlib/em_adc.o
- .debug_aranges
-                0x00000000       0x70 ./emlib/em_adc.o
- .debug_ranges  0x00000000      0x118 ./emlib/em_adc.o
- .debug_macro   0x00000000      0x34d ./emlib/em_adc.o
  .debug_macro   0x00000000      0xa66 ./emlib/em_adc.o
  .debug_macro   0x00000000      0x44f ./emlib/em_adc.o
  .debug_macro   0x00000000       0x22 ./emlib/em_adc.o
@@ -227,20 +210,6 @@ Discarded input sections
  .debug_macro   0x00000000     0x29fd ./emlib/em_adc.o
  .debug_macro   0x00000000      0x22a ./emlib/em_adc.o
  .debug_macro   0x00000000      0x22a ./emlib/em_adc.o
- .debug_macro   0x00000000       0x22 ./emlib/em_adc.o
- .debug_macro   0x00000000       0x51 ./emlib/em_adc.o
- .debug_macro   0x00000000       0x10 ./emlib/em_adc.o
- .debug_macro   0x00000000       0x7e ./emlib/em_adc.o
- .debug_macro   0x00000000       0xfc ./emlib/em_adc.o
- .debug_macro   0x00000000       0xea ./emlib/em_adc.o
- .debug_macro   0x00000000      0x35a ./emlib/em_adc.o
- .debug_macro   0x00000000      0x16d ./emlib/em_adc.o
- .debug_line    0x00000000     0x1306 ./emlib/em_adc.o
- .debug_str     0x00000000   0x135f44 ./emlib/em_adc.o
- .comment       0x00000000       0x4e ./emlib/em_adc.o
- .debug_frame   0x00000000      0x140 ./emlib/em_adc.o
- .ARM.attributes
-                0x00000000       0x32 ./emlib/em_adc.o
  .group         0x00000000        0xc ./emlib/em_cmu.o
  .group         0x00000000        0xc ./emlib/em_cmu.o
  .group         0x00000000        0xc ./emlib/em_cmu.o
@@ -785,6 +754,8 @@ Discarded input sections
                 0x00000000        0xc ./emlib/em_usart.o
  .text.USART_SpiTransfer
                 0x00000000       0x14 ./emlib/em_usart.o
+ .text.USART_Tx
+                0x00000000        0xc ./emlib/em_usart.o
  .text.USART_TxDouble
                 0x00000000        0xc ./emlib/em_usart.o
  .text.USART_TxDoubleExt
@@ -921,9 +892,7 @@ Discarded input sections
  .text          0x00000000        0x0 ./src/main_gg11_xg14.o
  .data          0x00000000        0x0 ./src/main_gg11_xg14.o
  .bss           0x00000000        0x0 ./src/main_gg11_xg14.o
- .text.initADC  0x00000000       0x88 ./src/main_gg11_xg14.o
- .bss.millivolts
-                0x00000000        0x4 ./src/main_gg11_xg14.o
+ .data.message  0x00000000        0x1 ./src/main_gg11_xg14.o
  .debug_macro   0x00000000      0xa66 ./src/main_gg11_xg14.o
  .debug_macro   0x00000000       0x22 ./src/main_gg11_xg14.o
  .debug_macro   0x00000000      0x356 ./src/main_gg11_xg14.o
@@ -1062,7 +1031,7 @@ END GROUP
 LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtend.o
 LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
 
-.text           0x00000000      0xa3c
+.text           0x00000000      0xd94
  *(.vectors)
  .vectors       0x00000000       0xe8 ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
                 0x00000000                __Vectors
@@ -1147,61 +1116,74 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4
  .text.SystemLFXOClockGet
                 0x00000264        0xc ./CMSIS/EFR32FG14P/system_efr32fg14p.o
                 0x00000264                SystemLFXOClockGet
+ .text.ADC_LoadDevinfoCal
+                0x00000270       0xec ./emlib/em_adc.o
+ .text.ADC_Init
+                0x0000035c       0xbc ./emlib/em_adc.o
+                0x0000035c                ADC_Init
+ .text.ADC_InitSingle
+                0x00000418       0xb0 ./emlib/em_adc.o
+                0x00000418                ADC_InitSingle
+ .text.ADC_PrescaleCalc
+                0x000004c8       0x44 ./emlib/em_adc.o
+                0x000004c8                ADC_PrescaleCalc
+ .text.ADC_TimebaseCalc
+                0x0000050c       0x30 ./emlib/em_adc.o
+                0x0000050c                ADC_TimebaseCalc
  .text.CMU_ClockEnable
-                0x00000270       0x9c ./emlib/em_cmu.o
-                0x00000270                CMU_ClockEnable
+                0x0000053c       0x9c ./emlib/em_cmu.o
+                0x0000053c                CMU_ClockEnable
  .text.CMU_ClockPrescGet
-                0x0000030c       0xd0 ./emlib/em_cmu.o
-                0x0000030c                CMU_ClockPrescGet
+                0x000005d8       0xd0 ./emlib/em_cmu.o
+                0x000005d8                CMU_ClockPrescGet
  .text.CMU_ClockSelectGet
-                0x000003dc       0xc4 ./emlib/em_cmu.o
-                0x000003dc                CMU_ClockSelectGet
+                0x000006a8       0xc4 ./emlib/em_cmu.o
+                0x000006a8                CMU_ClockSelectGet
  .text.lfClkGet
-                0x000004a0       0x8c ./emlib/em_cmu.o
+                0x0000076c       0x8c ./emlib/em_cmu.o
  .text.CMU_ClockFreqGet
-                0x0000052c      0x194 ./emlib/em_cmu.o
-                0x0000052c                CMU_ClockFreqGet
+                0x000007f8      0x194 ./emlib/em_cmu.o
+                0x000007f8                CMU_ClockFreqGet
  .text.CORE_EnterCritical
-                0x000006c0        0x8 ./emlib/em_core.o
-                0x000006c0                CORE_EnterCritical
+                0x0000098c        0x8 ./emlib/em_core.o
+                0x0000098c                CORE_EnterCritical
  .text.CORE_ExitCritical
-                0x000006c8        0x8 ./emlib/em_core.o
-                0x000006c8                CORE_ExitCritical
+                0x00000994        0x8 ./emlib/em_core.o
+                0x00000994                CORE_ExitCritical
  .text.GPIO_PinModeSet
-                0x000006d0       0xb4 ./emlib/em_gpio.o
-                0x000006d0                GPIO_PinModeSet
+                0x0000099c       0xb4 ./emlib/em_gpio.o
+                0x0000099c                GPIO_PinModeSet
  .text.USART_BaudrateAsyncSet
-                0x00000784       0x68 ./emlib/em_usart.o
-                0x00000784                USART_BaudrateAsyncSet
+                0x00000a50       0x68 ./emlib/em_usart.o
+                0x00000a50                USART_BaudrateAsyncSet
  .text.USART_InitAsync
-                0x000007ec       0xc0 ./emlib/em_usart.o
-                0x000007ec                USART_InitAsync
- .text.USART_Tx
-                0x000008ac        0xc ./emlib/em_usart.o
-                0x000008ac                USART_Tx
+                0x00000ab8       0xc0 ./emlib/em_usart.o
+                0x00000ab8                USART_InitAsync
+ .text.initADC  0x00000b78       0x90 ./src/main_gg11_xg14.o
+                0x00000b78                initADC
  .text.initUSART
-                0x000008b8       0x60 ./src/main_gg11_xg14.o
-                0x000008b8                initUSART
+                0x00000c08       0x60 ./src/main_gg11_xg14.o
+                0x00000c08                initUSART
  .text.startup.main
-                0x00000918       0x54 ./src/main_gg11_xg14.o
-                0x00000918                main
- .text.exit     0x0000096c       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
-                0x0000096c                exit
+                0x00000c68       0x5c ./src/main_gg11_xg14.o
+                0x00000c68                main
+ .text.exit     0x00000cc4       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
+                0x00000cc4                exit
  .text.__libc_init_array
-                0x00000994       0x48 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
-                0x00000994                __libc_init_array
- .text.memset   0x000009dc       0x10 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
-                0x000009dc                memset
- .text._exit    0x000009ec        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)
-                0x000009ec                _exit
+                0x00000cec       0x48 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
+                0x00000cec                __libc_init_array
+ .text.memset   0x00000d34       0x10 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
+                0x00000d34                memset
+ .text._exit    0x00000d44        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)
+                0x00000d44                _exit
  *(.init)
- .init          0x000009f0        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crti.o
-                0x000009f0                _init
- .init          0x000009f4        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
+ .init          0x00000d48        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crti.o
+                0x00000d48                _init
+ .init          0x00000d4c        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
  *(.fini)
- .fini          0x000009fc        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crti.o
-                0x000009fc                _fini
- .fini          0x00000a00        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
+ .fini          0x00000d54        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crti.o
+                0x00000d54                _fini
+ .fini          0x00000d58        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -1214,50 +1196,50 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4
  *(.dtors)
  *(.rodata*)
  .rodata.CSWTCH.47
-                0x00000a08        0x6 ./emlib/em_cmu.o
- *fill*         0x00000a0e        0x2 
+                0x00000d60        0x6 ./emlib/em_cmu.o
+ *fill*         0x00000d66        0x2 
  .rodata.CSWTCH.48
-                0x00000a10        0x4 ./emlib/em_cmu.o
+                0x00000d68        0x4 ./emlib/em_cmu.o
  .rodata.CSWTCH.49
-                0x00000a14        0x4 ./emlib/em_cmu.o
- .rodata        0x00000a18       0x1c ./src/main_gg11_xg14.o
+                0x00000d6c        0x4 ./emlib/em_cmu.o
+ .rodata        0x00000d70       0x1c ./src/main_gg11_xg14.o
  .rodata._global_impure_ptr
-                0x00000a34        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-impure.o)
-                0x00000a34                _global_impure_ptr
+                0x00000d8c        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-impure.o)
+                0x00000d8c                _global_impure_ptr
  *(.eh_frame*)
- .eh_frame      0x00000a38        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
- .eh_frame      0x00000a38        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtend.o
+ .eh_frame      0x00000d90        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+ .eh_frame      0x00000d90        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtend.o
 
-.glue_7         0x00000a3c        0x0
- .glue_7        0x00000a3c        0x0 linker stubs
+.glue_7         0x00000d94        0x0
+ .glue_7        0x00000d94        0x0 linker stubs
 
-.glue_7t        0x00000a3c        0x0
- .glue_7t       0x00000a3c        0x0 linker stubs
+.glue_7t        0x00000d94        0x0
+ .glue_7t       0x00000d94        0x0 linker stubs
 
-.vfp11_veneer   0x00000a3c        0x0
- .vfp11_veneer  0x00000a3c        0x0 linker stubs
+.vfp11_veneer   0x00000d94        0x0
+ .vfp11_veneer  0x00000d94        0x0 linker stubs
 
-.v4_bx          0x00000a3c        0x0
- .v4_bx         0x00000a3c        0x0 linker stubs
+.v4_bx          0x00000d94        0x0
+ .v4_bx         0x00000d94        0x0 linker stubs
 
-.iplt           0x00000a3c        0x0
- .iplt          0x00000a3c        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.iplt           0x00000d94        0x0
+ .iplt          0x00000d94        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000a3c                __exidx_start = .
+                0x00000d94                __exidx_start = .
 
-.ARM.exidx      0x00000a3c        0x8
+.ARM.exidx      0x00000d94        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00000a3c        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/crt0.o
+ .ARM.exidx     0x00000d94        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/crt0.o
                                  0x10 (size before relaxing)
-                0x00000a44                __exidx_end = .
-                0x00000a44                __etext = .
+                0x00000d9c                __exidx_end = .
+                0x00000d9c                __etext = .
 
-.rel.dyn        0x00000a44        0x0
- .rel.iplt      0x00000a44        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.rel.dyn        0x00000d9c        0x0
+ .rel.iplt      0x00000d9c        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
-.data           0x20000000       0x7c load address 0x00000a44
+.data           0x20000000       0x78 load address 0x00000d9c
                 0x20000000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -1270,41 +1252,41 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4
                 0x20000008        0x4 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .data.auxHfrcoFreq
                 0x2000000c        0x4 ./emlib/em_cmu.o
- .data.message  0x20000010        0x1 ./src/main_gg11_xg14.o
-                0x20000010                message
- *fill*         0x20000011        0x3 
  .data.impure_data
-                0x20000014       0x60 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-impure.o)
-                0x20000074                . = ALIGN (0x4)
+                0x20000010       0x60 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-impure.o)
+                0x20000070                . = ALIGN (0x4)
  *(.ram)
-                0x20000074                . = ALIGN (0x4)
-                0x20000074                PROVIDE (__preinit_array_start = .)
+                0x20000070                . = ALIGN (0x4)
+                0x20000070                PROVIDE (__preinit_array_start = .)
  *(.preinit_array)
-                0x20000074                PROVIDE (__preinit_array_end = .)
-                0x20000074                . = ALIGN (0x4)
-                0x20000074                PROVIDE (__init_array_start = .)
+                0x20000070                PROVIDE (__preinit_array_end = .)
+                0x20000070                . = ALIGN (0x4)
+                0x20000070                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x20000074        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
-                0x20000078                PROVIDE (__init_array_end = .)
-                0x20000078                . = ALIGN (0x4)
+ .init_array    0x20000070        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+                0x20000074                PROVIDE (__init_array_end = .)
+                0x20000074                . = ALIGN (0x4)
                 [!provide]                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
- .fini_array    0x20000078        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+ .fini_array    0x20000074        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end = .)
  *(.jcr*)
-                0x2000007c                . = ALIGN (0x4)
-                0x2000007c                __data_end__ = .
+                0x20000078                . = ALIGN (0x4)
+                0x20000078                __data_end__ = .
 
-.igot.plt       0x2000007c        0x0 load address 0x00000ac0
- .igot.plt      0x2000007c        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.igot.plt       0x20000078        0x0 load address 0x00000e14
+ .igot.plt      0x20000078        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
-.bss            0x2000007c       0x20 load address 0x00000ac0
-                0x2000007c                . = ALIGN (0x4)
-                0x2000007c                __bss_start__ = .
+.bss            0x20000078       0x24 load address 0x00000e14
+                0x20000078                . = ALIGN (0x4)
+                0x20000078                __bss_start__ = .
  *(.bss*)
- .bss           0x2000007c       0x1c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+ .bss           0x20000078       0x1c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+ .bss.millivolts
+                0x20000094        0x4 ./src/main_gg11_xg14.o
+                0x20000094                millivolts
  .bss.sample    0x20000098        0x4 ./src/main_gg11_xg14.o
                 0x20000098                sample
  *(COMMON)
@@ -1344,114 +1326,126 @@ LOAD linker stubs
  .ARM.attributes
                 0x0000008b       0x32 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .ARM.attributes
-                0x000000bd       0x32 ./emlib/em_cmu.o
+                0x000000bd       0x32 ./emlib/em_adc.o
  .ARM.attributes
-                0x000000ef       0x32 ./emlib/em_core.o
+                0x000000ef       0x32 ./emlib/em_cmu.o
  .ARM.attributes
-                0x00000121       0x32 ./emlib/em_gpio.o
+                0x00000121       0x32 ./emlib/em_core.o
  .ARM.attributes
-                0x00000153       0x32 ./emlib/em_usart.o
+                0x00000153       0x32 ./emlib/em_gpio.o
  .ARM.attributes
-                0x00000185       0x32 ./src/main_gg11_xg14.o
+                0x00000185       0x32 ./emlib/em_usart.o
  .ARM.attributes
-                0x000001b7       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
+                0x000001b7       0x32 ./src/main_gg11_xg14.o
  .ARM.attributes
-                0x000001e9       0x30 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-impure.o)
+                0x000001e9       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
  .ARM.attributes
-                0x00000219       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
+                0x0000021b       0x30 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-impure.o)
  .ARM.attributes
-                0x0000024b       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
+                0x0000024b       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
  .ARM.attributes
-                0x0000027d       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)
+                0x0000027d       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
  .ARM.attributes
-                0x000002af       0x30 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtend.o
+                0x000002af       0x32 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)
  .ARM.attributes
-                0x000002df       0x1e c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
+                0x000002e1       0x30 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtend.o
+ .ARM.attributes
+                0x00000311       0x1e c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
 
 .comment        0x00000000       0x4d
  .comment       0x00000000       0x4d ./CMSIS/EFR32FG14P/system_efr32fg14p.o
                                  0x4e (size before relaxing)
+ .comment       0x0000004d       0x4e ./emlib/em_adc.o
  .comment       0x0000004d       0x4e ./emlib/em_cmu.o
  .comment       0x0000004d       0x4e ./emlib/em_core.o
  .comment       0x0000004d       0x4e ./emlib/em_gpio.o
  .comment       0x0000004d       0x4e ./emlib/em_usart.o
  .comment       0x0000004d       0x4e ./src/main_gg11_xg14.o
 
-.debug_line     0x00000000     0x7c57
+.debug_line     0x00000000     0x8f8e
  .debug_line    0x00000000       0xcc ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
  .debug_line    0x000000cc      0xa4e ./CMSIS/EFR32FG14P/system_efr32fg14p.o
- .debug_line    0x00000b1a     0x36bd ./emlib/em_cmu.o
- .debug_line    0x000041d7      0xdf1 ./emlib/em_core.o
- .debug_line    0x00004fc8      0xe11 ./emlib/em_gpio.o
- .debug_line    0x00005dd9     0x135d ./emlib/em_usart.o
- .debug_line    0x00007136      0xb21 ./src/main_gg11_xg14.o
+ .debug_line    0x00000b1a     0x1306 ./emlib/em_adc.o
+ .debug_line    0x00001e20     0x36bd ./emlib/em_cmu.o
+ .debug_line    0x000054dd      0xdf1 ./emlib/em_core.o
+ .debug_line    0x000062ce      0xe11 ./emlib/em_gpio.o
+ .debug_line    0x000070df     0x135d ./emlib/em_usart.o
+ .debug_line    0x0000843c      0xb52 ./src/main_gg11_xg14.o
 
-.debug_info     0x00000000     0xa5f0
+.debug_info     0x00000000     0xc78e
  .debug_info    0x00000000       0x26 ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
  .debug_info    0x00000026      0xaab ./CMSIS/EFR32FG14P/system_efr32fg14p.o
- .debug_info    0x00000ad1     0x4cf4 ./emlib/em_cmu.o
- .debug_info    0x000057c5      0xea7 ./emlib/em_core.o
- .debug_info    0x0000666c     0x1183 ./emlib/em_gpio.o
- .debug_info    0x000077ef     0x14b8 ./emlib/em_usart.o
- .debug_info    0x00008ca7     0x1949 ./src/main_gg11_xg14.o
+ .debug_info    0x00000ad1     0x20f6 ./emlib/em_adc.o
+ .debug_info    0x00002bc7     0x4cf4 ./emlib/em_cmu.o
+ .debug_info    0x000078bb      0xea7 ./emlib/em_core.o
+ .debug_info    0x00008762     0x1183 ./emlib/em_gpio.o
+ .debug_info    0x000098e5     0x14b8 ./emlib/em_usart.o
+ .debug_info    0x0000ad9d     0x19f1 ./src/main_gg11_xg14.o
 
-.debug_abbrev   0x00000000     0x1439
+.debug_abbrev   0x00000000     0x185a
  .debug_abbrev  0x00000000       0x14 ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
  .debug_abbrev  0x00000014      0x262 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
- .debug_abbrev  0x00000276      0x579 ./emlib/em_cmu.o
- .debug_abbrev  0x000007ef      0x363 ./emlib/em_core.o
- .debug_abbrev  0x00000b52      0x38c ./emlib/em_gpio.o
- .debug_abbrev  0x00000ede      0x385 ./emlib/em_usart.o
- .debug_abbrev  0x00001263      0x1d6 ./src/main_gg11_xg14.o
+ .debug_abbrev  0x00000276      0x3a7 ./emlib/em_adc.o
+ .debug_abbrev  0x0000061d      0x579 ./emlib/em_cmu.o
+ .debug_abbrev  0x00000b96      0x363 ./emlib/em_core.o
+ .debug_abbrev  0x00000ef9      0x38c ./emlib/em_gpio.o
+ .debug_abbrev  0x00001285      0x385 ./emlib/em_usart.o
+ .debug_abbrev  0x0000160a      0x250 ./src/main_gg11_xg14.o
 
-.debug_aranges  0x00000000      0x3a8
+.debug_aranges  0x00000000      0x418
  .debug_aranges
                 0x00000000       0x20 ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
  .debug_aranges
                 0x00000020       0x68 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .debug_aranges
-                0x00000088      0x130 ./emlib/em_cmu.o
+                0x00000088       0x70 ./emlib/em_adc.o
  .debug_aranges
-                0x000001b8       0xb8 ./emlib/em_core.o
+                0x000000f8      0x130 ./emlib/em_cmu.o
  .debug_aranges
-                0x00000270       0x50 ./emlib/em_gpio.o
+                0x00000228       0xb8 ./emlib/em_core.o
  .debug_aranges
-                0x000002c0       0xb8 ./emlib/em_usart.o
+                0x000002e0       0x50 ./emlib/em_gpio.o
  .debug_aranges
-                0x00000378       0x30 ./src/main_gg11_xg14.o
+                0x00000330       0xb8 ./emlib/em_usart.o
+ .debug_aranges
+                0x000003e8       0x30 ./src/main_gg11_xg14.o
 
-.debug_str      0x00000000   0x13b14a
+.debug_str      0x00000000   0x13b9a9
  .debug_str     0x00000000      0x105 ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
  .debug_str     0x00000105   0x12ff47 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
                              0x130ea2 (size before relaxing)
- .debug_str     0x0013004c     0x585d ./emlib/em_cmu.o
+ .debug_str     0x0013004c     0x548c ./emlib/em_adc.o
+                             0x135f44 (size before relaxing)
+ .debug_str     0x001354d8     0x30b5 ./emlib/em_cmu.o
                              0x13669a (size before relaxing)
- .debug_str     0x001358a9      0x61d ./emlib/em_core.o
+ .debug_str     0x0013858d      0x5e8 ./emlib/em_core.o
                              0x131aa8 (size before relaxing)
- .debug_str     0x00135ec6      0x4f1 ./emlib/em_gpio.o
+ .debug_str     0x00138b75      0x4de ./emlib/em_gpio.o
                              0x132310 (size before relaxing)
- .debug_str     0x001363b7      0xeb8 ./emlib/em_usart.o
+ .debug_str     0x00139053      0xeb8 ./emlib/em_usart.o
                              0x133a99 (size before relaxing)
- .debug_str     0x0013726f     0x3edb ./src/main_gg11_xg14.o
-                             0x138fa1 (size before relaxing)
+ .debug_str     0x00139f0b     0x1a9e ./src/main_gg11_xg14.o
+                             0x138ff8 (size before relaxing)
 
-.debug_loc      0x00000000     0x69dc
+.debug_loc      0x00000000     0x7b0b
  .debug_loc     0x00000000      0x1c9 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
- .debug_loc     0x000001c9     0x475b ./emlib/em_cmu.o
- .debug_loc     0x00004924      0x769 ./emlib/em_core.o
- .debug_loc     0x0000508d      0xca2 ./emlib/em_gpio.o
- .debug_loc     0x00005d2f      0xc1d ./emlib/em_usart.o
- .debug_loc     0x0000694c       0x90 ./src/main_gg11_xg14.o
+ .debug_loc     0x000001c9     0x10e5 ./emlib/em_adc.o
+ .debug_loc     0x000012ae     0x475b ./emlib/em_cmu.o
+ .debug_loc     0x00005a09      0x769 ./emlib/em_core.o
+ .debug_loc     0x00006172      0xca2 ./emlib/em_gpio.o
+ .debug_loc     0x00006e14      0xc1d ./emlib/em_usart.o
+ .debug_loc     0x00007a31       0xda ./src/main_gg11_xg14.o
 
-.debug_ranges   0x00000000     0x12e8
+.debug_ranges   0x00000000     0x1410
  .debug_ranges  0x00000000       0x58 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
- .debug_ranges  0x00000058      0xd90 ./emlib/em_cmu.o
- .debug_ranges  0x00000de8      0x198 ./emlib/em_core.o
- .debug_ranges  0x00000f80      0x1e8 ./emlib/em_gpio.o
- .debug_ranges  0x00001168      0x140 ./emlib/em_usart.o
- .debug_ranges  0x000012a8       0x40 ./src/main_gg11_xg14.o
+ .debug_ranges  0x00000058      0x118 ./emlib/em_adc.o
+ .debug_ranges  0x00000170      0xd90 ./emlib/em_cmu.o
+ .debug_ranges  0x00000f00      0x198 ./emlib/em_core.o
+ .debug_ranges  0x00001098      0x1e8 ./emlib/em_gpio.o
+ .debug_ranges  0x00001280      0x140 ./emlib/em_usart.o
+ .debug_ranges  0x000013c0       0x50 ./src/main_gg11_xg14.o
 
-.debug_macro    0x00000000    0x2e418
+.debug_macro    0x00000000    0x2ef13
  .debug_macro   0x00000000      0x278 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .debug_macro   0x00000278      0xa66 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .debug_macro   0x00000cde       0x22 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
@@ -1500,52 +1494,62 @@ LOAD linker stubs
  .debug_macro   0x00029411     0x29fd ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .debug_macro   0x0002be0e      0x22a ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .debug_macro   0x0002c038      0x22a ./CMSIS/EFR32FG14P/system_efr32fg14p.o
- .debug_macro   0x0002c262      0x3b3 ./emlib/em_cmu.o
- .debug_macro   0x0002c615       0x64 ./emlib/em_cmu.o
- .debug_macro   0x0002c679      0x356 ./emlib/em_cmu.o
- .debug_macro   0x0002c9cf       0x7c ./emlib/em_cmu.o
- .debug_macro   0x0002ca4b       0x17 ./emlib/em_cmu.o
- .debug_macro   0x0002ca62       0xee ./emlib/em_cmu.o
- .debug_macro   0x0002cb50       0x8d ./emlib/em_cmu.o
- .debug_macro   0x0002cbdd      0x296 ./emlib/em_core.o
- .debug_macro   0x0002ce73       0x78 ./emlib/em_core.o
- .debug_macro   0x0002ceeb      0x2a3 ./emlib/em_gpio.o
- .debug_macro   0x0002d18e       0xe4 ./emlib/em_gpio.o
- .debug_macro   0x0002d272      0x2ec ./emlib/em_usart.o
- .debug_macro   0x0002d55e       0xeb ./emlib/em_usart.o
- .debug_macro   0x0002d649      0x3c8 ./src/main_gg11_xg14.o
- .debug_macro   0x0002da11       0x5e ./src/main_gg11_xg14.o
- .debug_macro   0x0002da6f       0x18 ./src/main_gg11_xg14.o
- .debug_macro   0x0002da87       0x5c ./src/main_gg11_xg14.o
- .debug_macro   0x0002dae3       0x35 ./src/main_gg11_xg14.o
- .debug_macro   0x0002db18       0x34 ./src/main_gg11_xg14.o
- .debug_macro   0x0002db4c       0x16 ./src/main_gg11_xg14.o
- .debug_macro   0x0002db62       0x57 ./src/main_gg11_xg14.o
- .debug_macro   0x0002dbb9       0x97 ./src/main_gg11_xg14.o
- .debug_macro   0x0002dc50       0xf6 ./src/main_gg11_xg14.o
- .debug_macro   0x0002dd46       0x10 ./src/main_gg11_xg14.o
- .debug_macro   0x0002dd56       0x16 ./src/main_gg11_xg14.o
- .debug_macro   0x0002dd6c       0x43 ./src/main_gg11_xg14.o
- .debug_macro   0x0002ddaf       0x34 ./src/main_gg11_xg14.o
- .debug_macro   0x0002dde3       0x10 ./src/main_gg11_xg14.o
- .debug_macro   0x0002ddf3       0x58 ./src/main_gg11_xg14.o
- .debug_macro   0x0002de4b      0x182 ./src/main_gg11_xg14.o
- .debug_macro   0x0002dfcd       0x10 ./src/main_gg11_xg14.o
- .debug_macro   0x0002dfdd       0xb2 ./src/main_gg11_xg14.o
- .debug_macro   0x0002e08f       0x16 ./src/main_gg11_xg14.o
- .debug_macro   0x0002e0a5      0x129 ./src/main_gg11_xg14.o
- .debug_macro   0x0002e1ce      0x102 ./src/main_gg11_xg14.o
- .debug_macro   0x0002e2d0       0x57 ./src/main_gg11_xg14.o
- .debug_macro   0x0002e327       0xf1 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002c262      0x34d ./emlib/em_adc.o
+ .debug_macro   0x0002c5af       0x22 ./emlib/em_adc.o
+ .debug_macro   0x0002c5d1       0x51 ./emlib/em_adc.o
+ .debug_macro   0x0002c622       0x10 ./emlib/em_adc.o
+ .debug_macro   0x0002c632       0x7e ./emlib/em_adc.o
+ .debug_macro   0x0002c6b0       0xfc ./emlib/em_adc.o
+ .debug_macro   0x0002c7ac       0xea ./emlib/em_adc.o
+ .debug_macro   0x0002c896      0x35a ./emlib/em_adc.o
+ .debug_macro   0x0002cbf0      0x16d ./emlib/em_adc.o
+ .debug_macro   0x0002cd5d      0x3b3 ./emlib/em_cmu.o
+ .debug_macro   0x0002d110       0x64 ./emlib/em_cmu.o
+ .debug_macro   0x0002d174      0x356 ./emlib/em_cmu.o
+ .debug_macro   0x0002d4ca       0x7c ./emlib/em_cmu.o
+ .debug_macro   0x0002d546       0x17 ./emlib/em_cmu.o
+ .debug_macro   0x0002d55d       0xee ./emlib/em_cmu.o
+ .debug_macro   0x0002d64b       0x8d ./emlib/em_cmu.o
+ .debug_macro   0x0002d6d8      0x296 ./emlib/em_core.o
+ .debug_macro   0x0002d96e       0x78 ./emlib/em_core.o
+ .debug_macro   0x0002d9e6      0x2a3 ./emlib/em_gpio.o
+ .debug_macro   0x0002dc89       0xe4 ./emlib/em_gpio.o
+ .debug_macro   0x0002dd6d      0x2ec ./emlib/em_usart.o
+ .debug_macro   0x0002e059       0xeb ./emlib/em_usart.o
+ .debug_macro   0x0002e144      0x3c8 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e50c       0x5e ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e56a       0x18 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e582       0x5c ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e5de       0x35 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e613       0x34 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e647       0x16 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e65d       0x57 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e6b4       0x97 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e74b       0xf6 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e841       0x10 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e851       0x16 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e867       0x43 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e8aa       0x34 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e8de       0x10 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e8ee       0x58 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002e946      0x182 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002eac8       0x10 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002ead8       0xb2 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002eb8a       0x16 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002eba0      0x129 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002ecc9      0x102 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002edcb       0x57 ./src/main_gg11_xg14.o
+ .debug_macro   0x0002ee22       0xf1 ./src/main_gg11_xg14.o
 
-.debug_frame    0x00000000      0x9d0
+.debug_frame    0x00000000      0xb10
  .debug_frame   0x00000000       0xc8 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
- .debug_frame   0x000000c8      0x370 ./emlib/em_cmu.o
- .debug_frame   0x00000438      0x204 ./emlib/em_core.o
- .debug_frame   0x0000063c       0xcc ./emlib/em_gpio.o
- .debug_frame   0x00000708      0x1cc ./emlib/em_usart.o
- .debug_frame   0x000008d4       0x68 ./src/main_gg11_xg14.o
- .debug_frame   0x0000093c       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
- .debug_frame   0x00000964       0x2c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
- .debug_frame   0x00000990       0x20 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
- .debug_frame   0x000009b0       0x20 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)
+ .debug_frame   0x000000c8      0x140 ./emlib/em_adc.o
+ .debug_frame   0x00000208      0x370 ./emlib/em_cmu.o
+ .debug_frame   0x00000578      0x204 ./emlib/em_core.o
+ .debug_frame   0x0000077c       0xcc ./emlib/em_gpio.o
+ .debug_frame   0x00000848      0x1cc ./emlib/em_usart.o
+ .debug_frame   0x00000a14       0x68 ./src/main_gg11_xg14.o
+ .debug_frame   0x00000a7c       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
+ .debug_frame   0x00000aa4       0x2c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00000ad0       0x20 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000af0       0x20 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)

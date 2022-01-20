@@ -1,4 +1,4 @@
-13:54:24 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
+12:53:14 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
 make -j12 all 
 Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
 Invoking: GNU ARM C Compiler
@@ -23,27 +23,27 @@ Running size tool
 arm-none-eabi-size "BRD4257A_EFR32FG14P_adc_single_polled.axf" -A
 BRD4257A_EFR32FG14P_adc_single_polled.axf  :
 section              size        addr
-.text                2620           0
-.ARM.exidx              8        2620
-.data                 124   536870912
-.bss                   32   536871036
+.text                3476           0
+.ARM.exidx              8        3476
+.data                 120   536870912
+.bss                   36   536871032
 .heap                3072   536871072
 .stack_dummy         1024   536871072
 .ARM.attributes        46           0
 .comment               77           0
-.debug_line         31831           0
-.debug_info         42480           0
-.debug_abbrev        5177           0
-.debug_aranges        936           0
-.debug_str        1290570           0
-.debug_loc          27100           0
-.debug_ranges        4840           0
-.debug_macro       189464           0
-.debug_frame         2512           0
-Total             1601913
+.debug_line         36750           0
+.debug_info         51086           0
+.debug_abbrev        6234           0
+.debug_aranges       1048           0
+.debug_str        1292713           0
+.debug_loc          31499           0
+.debug_ranges        5136           0
+.debug_macro       192275           0
+.debug_frame         2832           0
+Total             1627432
 
 
  
 
-13:54:26 Build Finished. 0 errors, 0 warnings. (took 1s.525ms)
+12:53:16 Build Finished. 0 errors, 0 warnings. (took 1s.425ms)
 
