@@ -1,4 +1,17 @@
-14:55:26 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+16:23:02 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+make -j12 all 
+Building file: ../main.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1' '-DEFR32FG14P233F256GM48=1' '-DSL_BOARD_NAME="BRD4259A"' '-DSL_BOARD_REV="A01"' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\config" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\autogen" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\board\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\CMSIS\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\device_init\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\driver\mx25_flash_shutdown\inc\sl_mx25_flash_shutdown_usart" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\system\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\udelay\inc" -Os -Wall -Wextra -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'initOpamp':
+../main.c:273:30: error: 'init0' undeclared (first use in this function); did you mean 'init1'?
+  273 |   OPAMP_Enable(VDAC0, OPA0, &init0);
+      |                              ^~~~~
+      |                              init1
+../main.c:273:30: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [subdir.mk:30: main.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+16:23:11 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
 make -j12 all 
 Building file: ../main.c
 Invoking: GNU ARM C Compiler
@@ -7,7 +20,7 @@ Finished building: ../main.c
  
 Building target: empty.axf
 Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
 Finished building target: empty.axf
  
 Building hex file: empty.hex
@@ -23,218 +36,31 @@ Running size tool
 arm-none-eabi-size "empty.axf" -A
 empty.axf  :
 section              size        addr
-.text                4356           0
-.ARM.exidx              8        4356
+.text                9008           0
+.ARM.exidx              8        9008
 .stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
+.data                 124   536875008
+.bss                  100   536875132
+.heap               28448   536875232
 .ARM.attributes        46           0
 .comment               77           0
-.debug_info         47623           0
-.debug_abbrev        5539           0
-.debug_loc          21309           0
-.debug_aranges       1024           0
-.debug_ranges        1744           0
-.debug_macro       187015           0
-.debug_line         32686           0
-.debug_str        1295450           0
-.debug_frame         2812           0
-Total             1632453
+.debug_info         88331           0
+.debug_abbrev       11149           0
+.debug_loc          40284           0
+.debug_aranges       1960           0
+.debug_ranges        3376           0
+.debug_macro       192927           0
+.debug_line         61182           0
+.debug_str        1322606           0
+.debug_frame         5564           0
+Total             1769286
 
 
  
-14:56:57 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
-make -j12 all 
-Building file: ../main.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1' '-DEFR32FG14P233F256GM48=1' '-DSL_BOARD_NAME="BRD4259A"' '-DSL_BOARD_REV="A01"' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\config" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\autogen" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\board\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\CMSIS\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\device_init\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\driver\mx25_flash_shutdown\inc\sl_mx25_flash_shutdown_usart" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\system\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\udelay\inc" -Os -Wall -Wextra -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
-Finished building: ../main.c
- 
-Building target: empty.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: empty.axf
- 
-Building hex file: empty.hex
-arm-none-eabi-objcopy -O ihex "empty.axf" "empty.hex"
- 
-Building bin file: empty.bin
-arm-none-eabi-objcopy -O binary "empty.axf" "empty.bin"
- 
-Building s37 file: empty.s37
-arm-none-eabi-objcopy -O srec "empty.axf" "empty.s37"
- 
-Running size tool
-arm-none-eabi-size "empty.axf" -A
-empty.axf  :
-section              size        addr
-.text                4392           0
-.ARM.exidx              8        4392
-.stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
-.ARM.attributes        46           0
-.comment               77           0
-.debug_info         53036           0
-.debug_abbrev        6308           0
-.debug_loc          23953           0
-.debug_aranges       1208           0
-.debug_ranges        1936           0
-.debug_macro       188025           0
-.debug_line         37527           0
-.debug_str        1296875           0
-.debug_frame         3308           0
-Total             1649463
-
-
- 
-15:15:09 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
-make -j12 all 
-Building file: ../main.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1' '-DEFR32FG14P233F256GM48=1' '-DSL_BOARD_NAME="BRD4259A"' '-DSL_BOARD_REV="A01"' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\config" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\autogen" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\board\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\CMSIS\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\device_init\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\driver\mx25_flash_shutdown\inc\sl_mx25_flash_shutdown_usart" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\system\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\udelay\inc" -Os -Wall -Wextra -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
-Finished building: ../main.c
- 
-Building target: empty.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: empty.axf
- 
-Building hex file: empty.hex
-arm-none-eabi-objcopy -O ihex "empty.axf" "empty.hex"
- 
-Building bin file: empty.bin
-arm-none-eabi-objcopy -O binary "empty.axf" "empty.bin"
- 
-Building s37 file: empty.s37
-arm-none-eabi-objcopy -O srec "empty.axf" "empty.s37"
- 
-Running size tool
-arm-none-eabi-size "empty.axf" -A
-empty.axf  :
-section              size        addr
-.text                4356           0
-.ARM.exidx              8        4356
-.stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
-.ARM.attributes        46           0
-.comment               77           0
-.debug_info         47623           0
-.debug_abbrev        5539           0
-.debug_loc          21309           0
-.debug_aranges       1024           0
-.debug_ranges        1744           0
-.debug_macro       187015           0
-.debug_line         32686           0
-.debug_str        1295450           0
-.debug_frame         2812           0
-Total             1632453
-
-
- 
-15:15:50 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
-make -j12 all 
-Building file: ../main.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1' '-DEFR32FG14P233F256GM48=1' '-DSL_BOARD_NAME="BRD4259A"' '-DSL_BOARD_REV="A01"' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\config" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\autogen" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\board\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\CMSIS\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\device_init\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\driver\mx25_flash_shutdown\inc\sl_mx25_flash_shutdown_usart" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\system\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\udelay\inc" -Os -Wall -Wextra -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
-Finished building: ../main.c
- 
-Building target: empty.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: empty.axf
- 
-Building hex file: empty.hex
-arm-none-eabi-objcopy -O ihex "empty.axf" "empty.hex"
- 
-Building bin file: empty.bin
-arm-none-eabi-objcopy -O binary "empty.axf" "empty.bin"
- 
-Building s37 file: empty.s37
-arm-none-eabi-objcopy -O srec "empty.axf" "empty.s37"
- 
-Running size tool
-arm-none-eabi-size "empty.axf" -A
-empty.axf  :
-section              size        addr
-.text                5560           0
-.ARM.exidx              8        5560
-.stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
-.ARM.attributes        46           0
-.comment               77           0
-.debug_info         57091           0
-.debug_abbrev        7125           0
-.debug_loc          27200           0
-.debug_aranges       1320           0
-.debug_ranges        2128           0
-.debug_macro       188727           0
-.debug_line         41394           0
-.debug_str        1297703           0
-.debug_frame         3712           0
-Total             1664855
-
-
- 
-09:08:10 **** Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+16:28:55 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
 make -j12 all 
 make: Nothing to be done for 'all'.
-09:17:16 **** Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
-make -j12 all 
-make: Nothing to be done for 'all'.
-09:18:42 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
-make -j12 all 
-Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -I"C:\SiliconLabs\SimplicityStudio\v5\developer\toolchains\gnu_arm\10.2_2020q4\/arm-none-eabi/include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_gg11_xg14.d" -MT"src/main_gg11_xg14.o" -o "src/main_gg11_xg14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c"
-Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
- 
-Building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_adc_single_polled.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_adc_single_polled.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_adc_single_polled.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_gpio.o" "./emlib/em_usart.o" "./src/main_gg11_xg14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
- 
-Building hex file: BRD4257A_EFR32FG14P_adc_single_polled.hex
-arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.hex"
- 
-Building bin file: BRD4257A_EFR32FG14P_adc_single_polled.bin
-arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.bin"
- 
-Building s37 file: BRD4257A_EFR32FG14P_adc_single_polled.s37
-arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.s37"
- 
-Running size tool
-arm-none-eabi-size "BRD4257A_EFR32FG14P_adc_single_polled.axf" -A
-BRD4257A_EFR32FG14P_adc_single_polled.axf  :
-section              size        addr
-.text                3464           0
-.ARM.exidx              8        3464
-.data                 120   536870912
-.bss                   36   536871032
-.heap                3072   536871072
-.stack_dummy         1024   536871072
-.ARM.attributes        46           0
-.comment               77           0
-.debug_line         36786           0
-.debug_info         51086           0
-.debug_abbrev        6234           0
-.debug_aranges       1048           0
-.debug_str        1292713           0
-.debug_loc          31499           0
-.debug_ranges        5136           0
-.debug_macro       192275           0
-.debug_frame         2832           0
-Total             1627456
-
-
- 
-09:23:18 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+17:03:30 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
 make -j12 all 
 Building file: ../main.c
 Invoking: GNU ARM C Compiler
@@ -243,7 +69,7 @@ Finished building: ../main.c
  
 Building target: empty.axf
 Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
 Finished building target: empty.axf
  
 Building hex file: empty.hex
@@ -259,77 +85,28 @@ Running size tool
 arm-none-eabi-size "empty.axf" -A
 empty.axf  :
 section              size        addr
-.text                5524           0
-.ARM.exidx              8        5524
+.text                9004           0
+.ARM.exidx              8        9004
 .stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
+.data                 124   536875008
+.bss                  100   536875132
+.heap               28448   536875232
 .ARM.attributes        46           0
 .comment               77           0
-.debug_info         57039           0
-.debug_abbrev        7149           0
-.debug_loc          27200           0
-.debug_aranges       1320           0
-.debug_ranges        2104           0
-.debug_macro       188727           0
-.debug_line         41384           0
-.debug_str        1297703           0
-.debug_frame         3712           0
-Total             1664757
+.debug_info         88331           0
+.debug_abbrev       11149           0
+.debug_loc          40284           0
+.debug_aranges       1960           0
+.debug_ranges        3376           0
+.debug_macro       192927           0
+.debug_line         61182           0
+.debug_str        1322606           0
+.debug_frame         5564           0
+Total             1769282
 
 
  
-10:48:52 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
-make -j12 all 
-Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -I"C:\SiliconLabs\SimplicityStudio\v5\developer\toolchains\gnu_arm\10.2_2020q4\/arm-none-eabi/include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_gg11_xg14.d" -MT"src/main_gg11_xg14.o" -o "src/main_gg11_xg14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c"
-Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
- 
-Building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_adc_single_polled.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_adc_single_polled.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_adc_single_polled.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_gpio.o" "./emlib/em_usart.o" "./src/main_gg11_xg14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
- 
-Building hex file: BRD4257A_EFR32FG14P_adc_single_polled.hex
-arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.hex"
- 
-Building bin file: BRD4257A_EFR32FG14P_adc_single_polled.bin
-arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.bin"
- 
-Building s37 file: BRD4257A_EFR32FG14P_adc_single_polled.s37
-arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.s37"
- 
-Running size tool
-arm-none-eabi-size "BRD4257A_EFR32FG14P_adc_single_polled.axf" -A
-BRD4257A_EFR32FG14P_adc_single_polled.axf  :
-section              size        addr
-.text                3464           0
-.ARM.exidx              8        3464
-.data                 120   536870912
-.bss                   36   536871032
-.heap                3072   536871072
-.stack_dummy         1024   536871072
-.ARM.attributes        46           0
-.comment               77           0
-.debug_line         36786           0
-.debug_info         51086           0
-.debug_abbrev        6234           0
-.debug_aranges       1048           0
-.debug_str        1292713           0
-.debug_loc          31499           0
-.debug_ranges        5136           0
-.debug_macro       192275           0
-.debug_frame         2832           0
-Total             1627456
-
-
- 
-11:13:28 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
-make -j12 all 
-make: Nothing to be done for 'all'.
-11:48:22 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+17:06:08 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
 make -j12 all 
 Building file: ../main.c
 Invoking: GNU ARM C Compiler
@@ -338,7 +115,7 @@ Finished building: ../main.c
  
 Building target: empty.axf
 Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
 Finished building target: empty.axf
  
 Building hex file: empty.hex
@@ -354,37 +131,41 @@ Running size tool
 arm-none-eabi-size "empty.axf" -A
 empty.axf  :
 section              size        addr
-.text                5560           0
-.ARM.exidx              8        5560
+.text                8996           0
+.ARM.exidx              8        8996
 .stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
+.data                 124   536875008
+.bss                  100   536875132
+.heap               28448   536875232
 .ARM.attributes        46           0
 .comment               77           0
-.debug_info         57091           0
-.debug_abbrev        7125           0
-.debug_loc          27200           0
-.debug_aranges       1320           0
-.debug_ranges        2128           0
-.debug_macro       188727           0
-.debug_line         41394           0
-.debug_str        1297703           0
-.debug_frame         3712           0
-Total             1664855
+.debug_info         88331           0
+.debug_abbrev       11149           0
+.debug_loc          40284           0
+.debug_aranges       1960           0
+.debug_ranges        3376           0
+.debug_macro       192927           0
+.debug_line         61192           0
+.debug_str        1322606           0
+.debug_frame         5564           0
+Total             1769284
 
 
  
-11:52:55 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+17:13:35 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
 make -j12 all 
 Building file: ../main.c
 Invoking: GNU ARM C Compiler
 arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1' '-DEFR32FG14P233F256GM48=1' '-DSL_BOARD_NAME="BRD4259A"' '-DSL_BOARD_REV="A01"' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\config" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\autogen" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\board\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\CMSIS\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\device_init\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\driver\mx25_flash_shutdown\inc\sl_mx25_flash_shutdown_usart" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\system\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\udelay\inc" -Os -Wall -Wextra -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+../main.c: In function 'initOpamp':
+../main.c:267:3: warning: "/*" within comment [-Wcomment]
+  267 |   /*OPAMP_Init_TypeDef init1 = OPA_INIT_CASCADED_INVERTING_OPA1;
+      |    
 Finished building: ../main.c
  
 Building target: empty.axf
 Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
 Finished building target: empty.axf
  
 Building hex file: empty.hex
@@ -400,349 +181,24 @@ Running size tool
 arm-none-eabi-size "empty.axf" -A
 empty.axf  :
 section              size        addr
-.text                5552           0
-.ARM.exidx              8        5552
+.text                9008           0
+.ARM.exidx              8        9008
 .stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
+.data                 124   536875008
+.bss                  100   536875132
+.heap               28448   536875232
 .ARM.attributes        46           0
 .comment               77           0
-.debug_info         57066           0
-.debug_abbrev        7125           0
-.debug_loc          27200           0
-.debug_aranges       1320           0
-.debug_ranges        2128           0
-.debug_macro       188727           0
-.debug_line         41393           0
-.debug_str        1297703           0
-.debug_frame         3712           0
-Total             1664821
-
-
- 
-11:53:54 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
-make -j12 all 
-Building file: ../main.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1' '-DEFR32FG14P233F256GM48=1' '-DSL_BOARD_NAME="BRD4259A"' '-DSL_BOARD_REV="A01"' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\config" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\autogen" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\board\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\CMSIS\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\device_init\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\driver\mx25_flash_shutdown\inc\sl_mx25_flash_shutdown_usart" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\system\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\udelay\inc" -Os -Wall -Wextra -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
-Finished building: ../main.c
- 
-Building target: empty.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: empty.axf
- 
-Building hex file: empty.hex
-arm-none-eabi-objcopy -O ihex "empty.axf" "empty.hex"
- 
-Building bin file: empty.bin
-arm-none-eabi-objcopy -O binary "empty.axf" "empty.bin"
- 
-Building s37 file: empty.s37
-arm-none-eabi-objcopy -O srec "empty.axf" "empty.s37"
- 
-Running size tool
-arm-none-eabi-size "empty.axf" -A
-empty.axf  :
-section              size        addr
-.text                5560           0
-.ARM.exidx              8        5560
-.stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
-.ARM.attributes        46           0
-.comment               77           0
-.debug_info         57091           0
-.debug_abbrev        7125           0
-.debug_loc          27200           0
-.debug_aranges       1320           0
-.debug_ranges        2128           0
-.debug_macro       188727           0
-.debug_line         41394           0
-.debug_str        1297703           0
-.debug_frame         3712           0
-Total             1664855
-
-
- 
-11:54:39 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
-make -j12 all 
-Building file: ../main.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1' '-DEFR32FG14P233F256GM48=1' '-DSL_BOARD_NAME="BRD4259A"' '-DSL_BOARD_REV="A01"' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\config" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\autogen" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\board\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\CMSIS\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\device_init\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\driver\mx25_flash_shutdown\inc\sl_mx25_flash_shutdown_usart" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\system\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\udelay\inc" -Os -Wall -Wextra -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
-Finished building: ../main.c
- 
-Building target: empty.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: empty.axf
- 
-Building hex file: empty.hex
-arm-none-eabi-objcopy -O ihex "empty.axf" "empty.hex"
- 
-Building bin file: empty.bin
-arm-none-eabi-objcopy -O binary "empty.axf" "empty.bin"
- 
-Building s37 file: empty.s37
-arm-none-eabi-objcopy -O srec "empty.axf" "empty.s37"
- 
-Running size tool
-arm-none-eabi-size "empty.axf" -A
-empty.axf  :
-section              size        addr
-.text                5556           0
-.ARM.exidx              8        5556
-.stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
-.ARM.attributes        46           0
-.comment               77           0
-.debug_info         57097           0
-.debug_abbrev        7125           0
-.debug_loc          27200           0
-.debug_aranges       1320           0
-.debug_ranges        2128           0
-.debug_macro       188727           0
-.debug_line         41397           0
-.debug_str        1297703           0
-.debug_frame         3712           0
-Total             1664860
-
-
- 
-12:03:57 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
-make -j12 all 
-Building file: ../main.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1' '-DEFR32FG14P233F256GM48=1' '-DSL_BOARD_NAME="BRD4259A"' '-DSL_BOARD_REV="A01"' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\config" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\autogen" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\board\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\CMSIS\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\device_init\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\driver\mx25_flash_shutdown\inc\sl_mx25_flash_shutdown_usart" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\system\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\udelay\inc" -Os -Wall -Wextra -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
-Finished building: ../main.c
- 
-Building target: empty.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: empty.axf
- 
-Building hex file: empty.hex
-arm-none-eabi-objcopy -O ihex "empty.axf" "empty.hex"
- 
-Building bin file: empty.bin
-arm-none-eabi-objcopy -O binary "empty.axf" "empty.bin"
- 
-Building s37 file: empty.s37
-arm-none-eabi-objcopy -O srec "empty.axf" "empty.s37"
- 
-Running size tool
-arm-none-eabi-size "empty.axf" -A
-empty.axf  :
-section              size        addr
-.text                5560           0
-.ARM.exidx              8        5560
-.stack               4096   536870912
-.data                 120   536875008
-.bss                   36   536875128
-.heap               28512   536875168
-.ARM.attributes        46           0
-.comment               77           0
-.debug_info         57091           0
-.debug_abbrev        7125           0
-.debug_loc          27200           0
-.debug_aranges       1320           0
-.debug_ranges        2128           0
-.debug_macro       188727           0
-.debug_line         41394           0
-.debug_str        1297703           0
-.debug_frame         3712           0
-Total             1664855
-
-
- 
-12:17:54 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
-make -j12 all 
-make: Nothing to be done for 'all'.
-12:37:41 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
-make -j12 all 
-Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -I"C:\SiliconLabs\SimplicityStudio\v5\developer\toolchains\gnu_arm\10.2_2020q4\/arm-none-eabi/include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_gg11_xg14.d" -MT"src/main_gg11_xg14.o" -o "src/main_gg11_xg14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c"
-Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
- 
-Building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_adc_single_polled.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_adc_single_polled.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_adc_single_polled.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_gpio.o" "./emlib/em_usart.o" "./src/main_gg11_xg14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
- 
-Building hex file: BRD4257A_EFR32FG14P_adc_single_polled.hex
-arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.hex"
- 
-Building bin file: BRD4257A_EFR32FG14P_adc_single_polled.bin
-arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.bin"
- 
-Building s37 file: BRD4257A_EFR32FG14P_adc_single_polled.s37
-arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.s37"
- 
-Running size tool
-arm-none-eabi-size "BRD4257A_EFR32FG14P_adc_single_polled.axf" -A
-BRD4257A_EFR32FG14P_adc_single_polled.axf  :
-section              size        addr
-.text                3468           0
-.ARM.exidx              8        3468
-.data                 120   536870912
-.bss                   36   536871032
-.heap                3072   536871072
-.stack_dummy         1024   536871072
-.ARM.attributes        46           0
-.comment               77           0
-.debug_line         36784           0
-.debug_info         51086           0
-.debug_abbrev        6234           0
-.debug_aranges       1048           0
-.debug_str        1292713           0
-.debug_loc          31499           0
-.debug_ranges        5136           0
-.debug_macro       192275           0
-.debug_frame         2832           0
-Total             1627458
-
-
- 
-12:51:14 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
-make -j12 all 
-Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -I"C:\SiliconLabs\SimplicityStudio\v5\developer\toolchains\gnu_arm\10.2_2020q4\/arm-none-eabi/include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_gg11_xg14.d" -MT"src/main_gg11_xg14.o" -o "src/main_gg11_xg14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c"
-Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
- 
-Building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_adc_single_polled.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_adc_single_polled.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_adc_single_polled.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_gpio.o" "./emlib/em_usart.o" "./src/main_gg11_xg14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
- 
-Building hex file: BRD4257A_EFR32FG14P_adc_single_polled.hex
-arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.hex"
- 
-Building bin file: BRD4257A_EFR32FG14P_adc_single_polled.bin
-arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.bin"
- 
-Building s37 file: BRD4257A_EFR32FG14P_adc_single_polled.s37
-arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.s37"
- 
-Running size tool
-arm-none-eabi-size "BRD4257A_EFR32FG14P_adc_single_polled.axf" -A
-BRD4257A_EFR32FG14P_adc_single_polled.axf  :
-section              size        addr
-.text                3472           0
-.ARM.exidx              8        3472
-.data                 120   536870912
-.bss                   36   536871032
-.heap                3072   536871072
-.stack_dummy         1024   536871072
-.ARM.attributes        46           0
-.comment               77           0
-.debug_line         36784           0
-.debug_info         51086           0
-.debug_abbrev        6234           0
-.debug_aranges       1048           0
-.debug_str        1292713           0
-.debug_loc          31499           0
-.debug_ranges        5136           0
-.debug_macro       192275           0
-.debug_frame         2832           0
-Total             1627462
-
-
- 
-12:52:15 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
-make -j12 all 
-Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -I"C:\SiliconLabs\SimplicityStudio\v5\developer\toolchains\gnu_arm\10.2_2020q4\/arm-none-eabi/include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_gg11_xg14.d" -MT"src/main_gg11_xg14.o" -o "src/main_gg11_xg14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c"
-Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
- 
-Building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_adc_single_polled.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_adc_single_polled.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_adc_single_polled.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_gpio.o" "./emlib/em_usart.o" "./src/main_gg11_xg14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
- 
-Building hex file: BRD4257A_EFR32FG14P_adc_single_polled.hex
-arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.hex"
- 
-Building bin file: BRD4257A_EFR32FG14P_adc_single_polled.bin
-arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.bin"
- 
-Building s37 file: BRD4257A_EFR32FG14P_adc_single_polled.s37
-arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.s37"
- 
-Running size tool
-arm-none-eabi-size "BRD4257A_EFR32FG14P_adc_single_polled.axf" -A
-BRD4257A_EFR32FG14P_adc_single_polled.axf  :
-section              size        addr
-.text                3476           0
-.ARM.exidx              8        3476
-.data                 120   536870912
-.bss                   36   536871032
-.heap                3072   536871072
-.stack_dummy         1024   536871072
-.ARM.attributes        46           0
-.comment               77           0
-.debug_line         36750           0
-.debug_info         51086           0
-.debug_abbrev        6234           0
-.debug_aranges       1048           0
-.debug_str        1292713           0
-.debug_loc          31499           0
-.debug_ranges        5136           0
-.debug_macro       192275           0
-.debug_frame         2832           0
-Total             1627432
-
-
- 
-12:53:14 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
-make -j12 all 
-Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
-Invoking: GNU ARM C Compiler
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -I"C:\SiliconLabs\SimplicityStudio\v5\developer\toolchains\gnu_arm\10.2_2020q4\/arm-none-eabi/include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_gg11_xg14.d" -MT"src/main_gg11_xg14.o" -o "src/main_gg11_xg14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c"
-Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c
- 
-Building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
-Invoking: GNU ARM C Linker
-arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_adc_single_polled.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_adc_single_polled.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_adc_single_polled.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_gpio.o" "./emlib/em_usart.o" "./src/main_gg11_xg14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
-Finished building target: BRD4257A_EFR32FG14P_adc_single_polled.axf
- 
-Building hex file: BRD4257A_EFR32FG14P_adc_single_polled.hex
-arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.hex"
- 
-Building bin file: BRD4257A_EFR32FG14P_adc_single_polled.bin
-arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.bin"
- 
-Building s37 file: BRD4257A_EFR32FG14P_adc_single_polled.s37
-arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_adc_single_polled.axf" "BRD4257A_EFR32FG14P_adc_single_polled.s37"
- 
-Running size tool
-arm-none-eabi-size "BRD4257A_EFR32FG14P_adc_single_polled.axf" -A
-BRD4257A_EFR32FG14P_adc_single_polled.axf  :
-section              size        addr
-.text                3476           0
-.ARM.exidx              8        3476
-.data                 120   536870912
-.bss                   36   536871032
-.heap                3072   536871072
-.stack_dummy         1024   536871072
-.ARM.attributes        46           0
-.comment               77           0
-.debug_line         36750           0
-.debug_info         51086           0
-.debug_abbrev        6234           0
-.debug_aranges       1048           0
-.debug_str        1292713           0
-.debug_loc          31499           0
-.debug_ranges        5136           0
-.debug_macro       192275           0
-.debug_frame         2832           0
-Total             1627432
+.debug_info         88330           0
+.debug_abbrev       11132           0
+.debug_loc          40284           0
+.debug_aranges       1960           0
+.debug_ranges        3376           0
+.debug_macro       192927           0
+.debug_line         61175           0
+.debug_str        1322600           0
+.debug_frame         5564           0
+Total             1769255
 
 
  

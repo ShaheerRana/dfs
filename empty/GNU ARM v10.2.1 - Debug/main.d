@@ -70,7 +70,10 @@ main.o: ../main.c \
  C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_vdac.h \
  C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_adc.h \
  C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_gpio.h \
- C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_usart.h
+ C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_usart.h \
+ C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_prs.h \
+ C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_ldma.h \
+ C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_letimer.h
 C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc/sl_gcc_preinclude.h:
 C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include/em_device.h:
 C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include/efr32fg14p233f256gm48.h:
@@ -143,3 +146,6 @@ C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0
 C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_adc.h:
 C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_gpio.h:
 C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_usart.h:
+C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_prs.h:
+C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_ldma.h:
+C\:\Users\Co-op\ Shaheeer\ R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_letimer.h:

@@ -6,23 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="APORT1YCH7"/>
+		<item key="selection" value="500"/>
 		<list key="findhistory">
+			<item value="500"/>
+			<item value="ADC_SINGLECTRL"/>
+			<item value="adcOvs"/>
+			<item value="res "/>
+			<item value=" res "/>
+			<item value="res"/>
+			<item value="Single Channel Control Register"/>
+			<item value="SINGLECTRL"/>
+			<item value="ADCn_SINGLECTRL"/>
 			<item value="APORT1YCH7"/>
 			<item value="PosSelAPORT1YCH7"/>
 			<item value="adcPosSelAPORT1YCH7"/>
 			<item value="VDAC_OPA_MUX_RESSEL_RES0"/>
 			<item value="tri"/>
 			<item value="usart0"/>
-			<item value="opa"/>
-			<item value="op"/>
-			<item value="o"/>
-			<item value="amp "/>
-			<item value="amp"/>
-			<item value="opamp"/>
-			<item value="linkload"/>
-			<item value="link"/>
-			<item value="CHEN"/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>
@@ -30,8 +30,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1385"/>
-		<item key="DIALOG_Y_ORIGIN" value="378"/>
+		<item key="DIALOG_X_ORIGIN" value="1111"/>
+		<item key="DIALOG_Y_ORIGIN" value="597"/>
 		<item key="DIALOG_WIDTH" value="284"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

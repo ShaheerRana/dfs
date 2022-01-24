@@ -1,0 +1,49 @@
+11:57:25 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma ****
+make -j12 all 
+Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_letimer_prs_dma/src/main_gg11_xg14.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_gg11_xg14.d" -MT"src/main_gg11_xg14.o" -o "src/main_gg11_xg14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_letimer_prs_dma/src/main_gg11_xg14.c"
+Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_letimer_prs_dma/src/main_gg11_xg14.c
+ 
+Building target: BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.axf
+Invoking: GNU ARM C Linker
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_emu.o" "./emlib/em_ldma.o" "./emlib/em_letimer.o" "./emlib/em_prs.o" "./emlib/em_system.o" "./src/main_gg11_xg14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+Finished building target: BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.axf
+ 
+Building hex file: BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.hex
+arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.axf" "BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.hex"
+ 
+Building bin file: BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.bin
+arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.axf" "BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.bin"
+ 
+Building s37 file: BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.s37
+arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.axf" "BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.s37"
+ 
+Running size tool
+arm-none-eabi-size "BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.axf" -A
+BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma.axf  :
+section              size        addr
+.text                6164           0
+.ARM.exidx              8        6164
+.data                 148   536870912
+.bss                  112   536871060
+.heap                3072   536871176
+.stack_dummy         1024   536871176
+.ARM.attributes        46           0
+.comment               77           0
+.debug_line         48289           0
+.debug_info         71203           0
+.debug_abbrev        8312           0
+.debug_aranges       1384           0
+.debug_str        1312790           0
+.debug_loc          39267           0
+.debug_ranges        7280           0
+.debug_macro       194267           0
+.debug_frame         3852           0
+Total             1697295
+
+
+ 
+
+11:57:27 Build Finished. 0 errors, 0 warnings. (took 1s.702ms)
+
