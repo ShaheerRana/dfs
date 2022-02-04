@@ -203,7 +203,7 @@ void initAdc(void)
   initSingle.singleDmaEm2Wu = 1;
 
   // Add external ADC input. See README for corresponding EXP header pin.
-  initSingle.posSel = adcPosSelAPORT1YCH7;
+  initSingle.posSel = adcPosSelAPORT4XCH11;
 
   // Basic ADC single configuration
   initSingle.diff = false;              // single-ended
@@ -234,6 +234,7 @@ void initUSART (void)
   USART_InitAsync_TypeDef init = USART_INITASYNC_DEFAULT;
   CMU_ClockEnable(cmuClock_USART1, true);
   CMU_ClockEnable(cmuClock_GPIO, true);
+  //init.databits = usartDatabits16;
 
   GPIO_PinModeSet(gpioPortC, 6, gpioModePushPull, 1);
   USART_InitAsync(USART1, &init);
@@ -247,13 +248,15 @@ void initUSART (void)
  *****************************************************************************/
 void initOpamp(void)
 {
+  // Enable the VDAC clock for accessing the opamp registers
+  CMU_ClockEnable(cmuClock_VDAC0, true); // Enable VDAC clock
+
   // Configure OPA0
   OPAMP_Init_TypeDef init = OPA_INIT_NON_INVERTING;
   init.resInMux = opaResInMuxVss;       // Set the input to the resistor ladder to VSS
-  init.resSel   = VDAC_OPA_MUX_RESSEL_RES0;      // Choose the resistor ladder ratio
+  init.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
   init.posSel   = opaPosSelAPORT4XCH11;  // Choose opamp positive input to come from P
   init.outMode  = opaOutModeAPORT1YCH7; // Route opamp output to P
-
   // Enable OPA0
   OPAMP_Enable(VDAC0, OPA0, &init);
   /*
@@ -261,18 +264,32 @@ void initOpamp(void)
   OPAMP_Init_TypeDef init0 = OPA_INIT_CASCADED_INVERTING_OPA0;
   init0.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
   init0.posSel   = opaPosSelAPORT4XCH11;  // Choose opamp positive input to come from PC8
+  init0.outMode = opaOutModeAPORT1YCH1; // Route opamp output to PA1
   init0.resInMux = opaResInMuxNegPad;    // Route negative pad to resistor ladder
 
   // Configure OPA1
-  /*OPAMP_Init_TypeDef init1 = OPA_INIT_CASCADED_INVERTING_OPA1;
-  init1.resSel  = opaResSelR2eq3R1;      // Choose the resistor ladder ratio
+  OPAMP_Init_TypeDef init1 = OPA_INIT_CASCADED_INVERTING_OPA1;
+  init1.resSel  = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
   init1.posSel  = opaPosSelOpaIn;  // Choose opamp positive input to come from PC9
+  init1.resInMux = opaResInMuxNegPad;    // Route negative pad to resistor ladder
   init1.outMode = opaOutModeAPORT1YCH7; // Route opamp output to PA1
-*/
-  // Enable OPA0 and OPA1
-  //OPAMP_Enable(VDAC0, OPA0, &init0);
-  //OPAMP_Enable(VDAC0, OPA1, &init1);
+  /*
+  OPAMP_Init_TypeDef init0 = OPA_INIT_CASCADED_NON_INVERTING_OPA0;
+  init0.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
+  init0.resInMux = opaResInMuxVss;       // Set the input to the resistor ladder to VSS
+  init0.posSel   = opaPosSelAPORT1XCH6;  // Choose opamp positive input to come from PC6
 
+  // Configure OPA1
+  OPAMP_Init_TypeDef init1 = OPA_INIT_CASCADED_NON_INVERTING_OPA1;
+  init1.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
+  init1.resInMux = opaResInMuxVss;       // Set the input to the resistor ladder to VSS
+  init1.posSel   = opaPosSelOpaIn;       // Choose opamp positive input to come from OPA0
+  init1.outMode  = opaOutModeAPORT1YCH7; // Route opamp output to PC7
+
+
+  // Enable OPA0 and OPA1
+  OPAMP_Enable(VDAC0, OPA0, &init0);
+  OPAMP_Enable(VDAC0, OPA1, &init1);*/
 }
 
 /**************************************************************************//**
@@ -296,9 +313,6 @@ int main(void)
 {
   // Chip errata
   CHIP_Init();
-
-  // Enable the VDAC clock for accessing the opamp registers
-  CMU_ClockEnable(cmuClock_VDAC0, true); // Enable VDAC clock
 
   // Initialize the ADC and OPAMP
   initAdc();
@@ -329,7 +343,19 @@ int main(void)
   */
       if (txFlag == 1)
       {
-          USART_Tx(USART1, 'a');
+          int r = adcBuffer [1] & 0xff;
+          int g = (adcBuffer [1] >> 8) & 0xff;
+          int b = (adcBuffer [1] >> 16) & 0xff;
+          int a = (adcBuffer [1] >> 24) & 0xff;
+
+          USART_Tx(USART1, r);
+          USART_Tx(USART1, "\n");
+          USART_Tx(USART1, g);
+          USART_Tx(USART1, "\n");
+
+          //USART_Tx(USART1, (adcBuffer [1] >> 8) & 0xff);
+          //USART_Tx(USART1, (adcBuffer [1] >> 16) & 0xff);
+          //USART_Tx(USART1, (adcBuffer [1] >> 24) & 0xff);
           txFlag = 0;
       }
   }

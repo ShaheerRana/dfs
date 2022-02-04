@@ -1,7 +1,6 @@
-11:06:34 **** Clean-only build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
-make -j12 clean 
-rm -rf BRD4257A_EFR32FG14P_adc_single_polled.axf
- 
+14:56:39 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
+make -j12 all 
+make: Nothing to be done for 'all'.
 
-11:06:34 Build Finished. 0 errors, 0 warnings. (took 656ms)
+14:56:39 Build Finished. 0 errors, 0 warnings. (took 192ms)
 

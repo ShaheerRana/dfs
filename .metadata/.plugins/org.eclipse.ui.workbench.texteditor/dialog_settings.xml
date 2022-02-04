@@ -6,23 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="500"/>
+		<item key="selection" value="usartDatabits16"/>
 		<list key="findhistory">
+			<item value="usartDatabits16"/>
+			<item value="16bit"/>
+			<item value="bit"/>
+			<item value="align"/>
+			<item value="message"/>
+			<item value="vdAC"/>
+			<item value="cmuClock_VDAC0"/>
+			<item value="cmuClock_VDAC0, true"/>
+			<item value="_VDAC_OPA_MUX_RESSEL_RES0"/>
+			<item value="VDAC_OPA_MUX_RESSEL_RES0"/>
 			<item value="500"/>
 			<item value="ADC_SINGLECTRL"/>
 			<item value="adcOvs"/>
 			<item value="res "/>
 			<item value=" res "/>
-			<item value="res"/>
-			<item value="Single Channel Control Register"/>
-			<item value="SINGLECTRL"/>
-			<item value="ADCn_SINGLECTRL"/>
-			<item value="APORT1YCH7"/>
-			<item value="PosSelAPORT1YCH7"/>
-			<item value="adcPosSelAPORT1YCH7"/>
-			<item value="VDAC_OPA_MUX_RESSEL_RES0"/>
-			<item value="tri"/>
-			<item value="usart0"/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>
