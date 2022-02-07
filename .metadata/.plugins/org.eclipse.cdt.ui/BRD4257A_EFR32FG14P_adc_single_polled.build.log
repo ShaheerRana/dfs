@@ -1,6 +1,6 @@
-14:56:39 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
+16:30:24 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
 make -j12 all 
 make: Nothing to be done for 'all'.
 
-14:56:39 Build Finished. 0 errors, 0 warnings. (took 192ms)
+16:30:25 Build Finished. 0 errors, 0 warnings. (took 893ms)
 

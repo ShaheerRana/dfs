@@ -12805,3 +12805,83 @@ java.lang.InterruptedException
 	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:207)
 	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:220)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+!SESSION 2022-02-07 09:15:55.044 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.5
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.silabs.ss.platform.jetty.server 1 0 2022-02-07 09:16:00.047
+!MESSAGE ContentServer started at: 127.0.0.1, 50001
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-02-07 09:16:00.082
+!MESSAGE com.silabs.ss.tool.launcher.product found! Writing main studio shared file
+
+!ENTRY com.silabs.ss.platform.useraccounts.core 4 0 2022-02-07 09:16:28.386
+!MESSAGE Error in connection authentication or validation
+!STACK 0
+com.sforce.ws.SoapFaultException: StudioService: no access allowed to this class.
+	at com.sforce.ws.transport.SoapConnection.createException(SoapConnection.java:212)
+	at com.sforce.ws.transport.SoapConnection.receive(SoapConnection.java:156)
+	at com.sforce.ws.transport.SoapConnection.send(SoapConnection.java:99)
+	at com.sforce.soap.StudioService.SoapConnection.isValidated(SoapConnection.java:177)
+	at com.silabs.ss.platform.internal.useraccounts.core.salesforce.impl.SilabsSFAuthService.isValidated(SilabsSFAuthService.java:1001)
+	at com.silabs.ss.platform.internal.useraccounts.core.salesforce.impl.SilabsSFAuthService.createConnection(SilabsSFAuthService.java:240)
+	at com.silabs.ss.platform.internal.useraccounts.core.salesforce.impl.SilabsSFAuthService.getSecuredUpdateRepos(SilabsSFAuthService.java:333)
+	at com.silabs.ss.tool.internal.api.installer.core.SLSP2UpdateSites.fetchSFSecureModeUpdateSites(SLSP2UpdateSites.java:346)
+	at com.silabs.ss.tool.internal.api.installer.core.SLSP2UpdateSites.ensureStudioRepos(SLSP2UpdateSites.java:255)
+	at com.silabs.ss.tool.internal.api.installer.core.SLSP2UpdateSites.ensureStudioReposLoaded(SLSP2UpdateSites.java:619)
+	at com.silabs.ss.tool.internal.api.installer.core.InstallerUtils.ensurePackagesFetched(InstallerUtils.java:1908)
+	at com.silabs.ss.tool.internal.installer.core.updates.UpdateManager.updatePackageMetadata(UpdateManager.java:212)
+	at com.silabs.ss.tool.internal.installer.core.updates.UpdateManager.ensureUpdatesFetched(UpdateManager.java:278)
+	at com.silabs.ss.tool.internal.installer.core.updates.UpdateManager$1.run(UpdateManager.java:166)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-02-07 09:16:29.590
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.tool.installer.core 2 0 2022-02-07 09:16:32.714
+!MESSAGE Problem getting package resources: changelog
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-02-07 09:16:35.029
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2022-02-07 11:24:40.879
+!MESSAGE Invalid discovery key: null
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-02-07 11:29:26.868
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-02-07 11:29:29.982
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-02-07 11:42:13.639
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-02-07 11:42:16.016
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-02-07 11:44:44.265
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-02-07 11:44:46.659
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-02-07 11:45:14.719
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-02-07 11:45:17.202
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-02-07 11:49:13.780
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-02-07 11:49:16.283
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-02-07 16:30:25.709
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-02-07 16:30:29.035
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.

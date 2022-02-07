@@ -1183,7 +1183,7 @@ END GROUP
 LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtend.o
 LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
 
-.text           0x00000000      0xe4c
+.text           0x00000000      0xec8
  *(.vectors)
  .vectors       0x00000000       0xe8 ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
                 0x00000000                __Vectors
@@ -1308,28 +1308,28 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4
  .text.initAdc  0x00000c08       0x84 ./src/main_radio14.o
                 0x00000c08                initAdc
  .text.initOpamp
-                0x00000c8c       0x58 ./src/main_radio14.o
+                0x00000c8c       0x94 ./src/main_radio14.o
                 0x00000c8c                initOpamp
  .text.startup.main
-                0x00000ce4       0x68 ./src/main_radio14.o
-                0x00000ce4                main
- .text.exit     0x00000d4c       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
-                0x00000d4c                exit
+                0x00000d20       0x68 ./src/main_radio14.o
+                0x00000d20                main
+ .text.exit     0x00000d88       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
+                0x00000d88                exit
  .text.__libc_init_array
-                0x00000d74       0x48 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
-                0x00000d74                __libc_init_array
- .text.memset   0x00000dbc       0x10 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
-                0x00000dbc                memset
- .text._exit    0x00000dcc        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)
-                0x00000dcc                _exit
+                0x00000db0       0x48 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
+                0x00000db0                __libc_init_array
+ .text.memset   0x00000df8       0x10 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
+                0x00000df8                memset
+ .text._exit    0x00000e08        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)
+                0x00000e08                _exit
  *(.init)
- .init          0x00000dd0        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crti.o
-                0x00000dd0                _init
- .init          0x00000dd4        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
+ .init          0x00000e0c        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crti.o
+                0x00000e0c                _init
+ .init          0x00000e10        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
  *(.fini)
- .fini          0x00000ddc        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crti.o
-                0x00000ddc                _fini
- .fini          0x00000de0        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
+ .fini          0x00000e18        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crti.o
+                0x00000e18                _fini
+ .fini          0x00000e1c        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtn.o
  *crtbegin.o(.ctors)
  *crtbegin?.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
@@ -1342,52 +1342,52 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4
  *(.dtors)
  *(.rodata*)
  .rodata.CSWTCH.47
-                0x00000de8        0x6 ./emlib/em_cmu.o
- *fill*         0x00000dee        0x2 
+                0x00000e24        0x6 ./emlib/em_cmu.o
+ *fill*         0x00000e2a        0x2 
  .rodata.CSWTCH.48
-                0x00000df0        0x4 ./emlib/em_cmu.o
+                0x00000e2c        0x4 ./emlib/em_cmu.o
  .rodata.CSWTCH.49
-                0x00000df4        0x4 ./emlib/em_cmu.o
+                0x00000e30        0x4 ./emlib/em_cmu.o
  .rodata.CSWTCH.17
-                0x00000df8        0xc ./emlib/em_opamp.o
- .rodata        0x00000e04       0x40 ./src/main_radio14.o
+                0x00000e34        0xc ./emlib/em_opamp.o
+ .rodata        0x00000e40       0x80 ./src/main_radio14.o
  .rodata._global_impure_ptr
-                0x00000e44        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-impure.o)
-                0x00000e44                _global_impure_ptr
+                0x00000ec0        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-impure.o)
+                0x00000ec0                _global_impure_ptr
  *(.eh_frame*)
- .eh_frame      0x00000e48        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
- .eh_frame      0x00000e48        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtend.o
+ .eh_frame      0x00000ec4        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+ .eh_frame      0x00000ec4        0x4 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtend.o
 
-.glue_7         0x00000e4c        0x0
- .glue_7        0x00000e4c        0x0 linker stubs
+.glue_7         0x00000ec8        0x0
+ .glue_7        0x00000ec8        0x0 linker stubs
 
-.glue_7t        0x00000e4c        0x0
- .glue_7t       0x00000e4c        0x0 linker stubs
+.glue_7t        0x00000ec8        0x0
+ .glue_7t       0x00000ec8        0x0 linker stubs
 
-.vfp11_veneer   0x00000e4c        0x0
- .vfp11_veneer  0x00000e4c        0x0 linker stubs
+.vfp11_veneer   0x00000ec8        0x0
+ .vfp11_veneer  0x00000ec8        0x0 linker stubs
 
-.v4_bx          0x00000e4c        0x0
- .v4_bx         0x00000e4c        0x0 linker stubs
+.v4_bx          0x00000ec8        0x0
+ .v4_bx         0x00000ec8        0x0 linker stubs
 
-.iplt           0x00000e4c        0x0
- .iplt          0x00000e4c        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.iplt           0x00000ec8        0x0
+ .iplt          0x00000ec8        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00000e4c                __exidx_start = .
+                0x00000ec8                __exidx_start = .
 
-.ARM.exidx      0x00000e4c        0x8
+.ARM.exidx      0x00000ec8        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00000e4c        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/crt0.o
+ .ARM.exidx     0x00000ec8        0x8 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp/crt0.o
                                  0x10 (size before relaxing)
-                0x00000e54                __exidx_end = .
-                0x00000e54                __etext = .
+                0x00000ed0                __exidx_end = .
+                0x00000ed0                __etext = .
 
-.rel.dyn        0x00000e54        0x0
- .rel.iplt      0x00000e54        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
+.rel.dyn        0x00000ed0        0x0
+ .rel.iplt      0x00000ed0        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
-.data           0x20000000       0x78 load address 0x00000e54
+.data           0x20000000       0x78 load address 0x00000ed0
                 0x20000000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -1424,10 +1424,10 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4
                 0x20000078                . = ALIGN (0x4)
                 0x20000078                __data_end__ = .
 
-.igot.plt       0x20000078        0x0 load address 0x00000ecc
+.igot.plt       0x20000078        0x0 load address 0x00000f48
  .igot.plt      0x20000078        0x0 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/thumb/v7e-m+fp/softfp/crtbegin.o
 
-.bss            0x20000078       0x24 load address 0x00000ecc
+.bss            0x20000078       0x24 load address 0x00000f48
                 0x20000078                . = ALIGN (0x4)
                 0x20000078                __bss_start__ = .
  *(.bss*)
@@ -1505,23 +1505,23 @@ LOAD linker stubs
  .comment       0x0000004d       0x4e ./emlib/em_opamp.o
  .comment       0x0000004d       0x4e ./src/main_radio14.o
 
-.debug_line     0x00000000     0x79d7
+.debug_line     0x00000000     0x79f1
  .debug_line    0x00000000       0xcc ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
  .debug_line    0x000000cc      0xa4e ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .debug_line    0x00000b1a     0x1306 ./emlib/em_adc.o
  .debug_line    0x00001e20     0x36bd ./emlib/em_cmu.o
  .debug_line    0x000054dd      0xdf1 ./emlib/em_core.o
  .debug_line    0x000062ce      0xc1d ./emlib/em_opamp.o
- .debug_line    0x00006eeb      0xaec ./src/main_radio14.o
+ .debug_line    0x00006eeb      0xb06 ./src/main_radio14.o
 
-.debug_info     0x00000000     0xb9fb
+.debug_info     0x00000000     0xba28
  .debug_info    0x00000000       0x26 ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
  .debug_info    0x00000026      0xaab ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .debug_info    0x00000ad1     0x20f6 ./emlib/em_adc.o
  .debug_info    0x00002bc7     0x4cf4 ./emlib/em_cmu.o
  .debug_info    0x000078bb      0xea7 ./emlib/em_core.o
  .debug_info    0x00008762     0x12bd ./emlib/em_opamp.o
- .debug_info    0x00009a1f     0x1fdc ./src/main_radio14.o
+ .debug_info    0x00009a1f     0x2009 ./src/main_radio14.o
 
 .debug_abbrev   0x00000000     0x132d
  .debug_abbrev  0x00000000       0x14 ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
@@ -1548,7 +1548,7 @@ LOAD linker stubs
  .debug_aranges
                 0x00000308       0x30 ./src/main_radio14.o
 
-.debug_str      0x00000000   0x13b7dd
+.debug_str      0x00000000   0x13b7e9
  .debug_str     0x00000000      0x100 ./CMSIS/EFR32FG14P/startup_efr32fg14p.o
  .debug_str     0x00000100   0x12ff4c ./CMSIS/EFR32FG14P/system_efr32fg14p.o
                              0x130e9d (size before relaxing)
@@ -1560,8 +1560,8 @@ LOAD linker stubs
                              0x131aa3 (size before relaxing)
  .debug_str     0x00138b8d     0x2ab8 ./emlib/em_opamp.o
                              0x133799 (size before relaxing)
- .debug_str     0x0013b645      0x198 ./src/main_radio14.o
-                             0x1380b2 (size before relaxing)
+ .debug_str     0x0013b645      0x1a4 ./src/main_radio14.o
+                             0x1380be (size before relaxing)
 
 .debug_loc      0x00000000     0x6468
  .debug_loc     0x00000000      0x1c9 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
@@ -1655,14 +1655,14 @@ LOAD linker stubs
  .debug_macro   0x0002e1f9       0x1e ./src/main_radio14.o
  .debug_macro   0x0002e217       0x57 ./src/main_radio14.o
 
-.debug_frame    0x00000000      0x8b8
+.debug_frame    0x00000000      0x8c0
  .debug_frame   0x00000000       0xc8 ./CMSIS/EFR32FG14P/system_efr32fg14p.o
  .debug_frame   0x000000c8      0x140 ./emlib/em_adc.o
  .debug_frame   0x00000208      0x370 ./emlib/em_cmu.o
  .debug_frame   0x00000578      0x204 ./emlib/em_core.o
  .debug_frame   0x0000077c       0x40 ./emlib/em_opamp.o
- .debug_frame   0x000007bc       0x68 ./src/main_radio14.o
- .debug_frame   0x00000824       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
- .debug_frame   0x0000084c       0x2c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
- .debug_frame   0x00000878       0x20 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
- .debug_frame   0x00000898       0x20 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)
+ .debug_frame   0x000007bc       0x70 ./src/main_radio14.o
+ .debug_frame   0x0000082c       0x28 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-exit.o)
+ .debug_frame   0x00000854       0x2c c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00000880       0x20 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x000008a0       0x20 c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4/bin/../lib/gcc/arm-none-eabi/10.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/softfp\libnosys.a(_exit.o)

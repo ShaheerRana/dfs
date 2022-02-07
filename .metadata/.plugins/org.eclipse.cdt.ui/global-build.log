@@ -563,3 +563,107 @@ Total             1769692
 
 
  
+11:29:25 **** Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_opamp_to_adc_2 ****
+make -j12 all 
+make: Nothing to be done for 'all'.
+11:42:13 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_opamp_to_adc_2 ****
+make -j12 all 
+make: Nothing to be done for 'all'.
+11:44:41 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_opamp_to_adc_2 ****
+make -j12 all 
+Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/opamp/opamp_to_adc/src/main_radio14.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_radio14.d" -MT"src/main_radio14.o" -o "src/main_radio14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/opamp/opamp_to_adc/src/main_radio14.c"
+Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/opamp/opamp_to_adc/src/main_radio14.c
+ 
+Building target: BRD4257A_EFR32FG14P_opamp_to_adc_2.axf
+Invoking: GNU ARM C Linker
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_opamp_to_adc_2.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_opamp_to_adc_2.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_opamp_to_adc_2.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_emu.o" "./emlib/em_opamp.o" "./emlib/em_system.o" "./src/main_radio14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+Finished building target: BRD4257A_EFR32FG14P_opamp_to_adc_2.axf
+ 
+Building hex file: BRD4257A_EFR32FG14P_opamp_to_adc_2.hex
+arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_opamp_to_adc_2.axf" "BRD4257A_EFR32FG14P_opamp_to_adc_2.hex"
+ 
+Building bin file: BRD4257A_EFR32FG14P_opamp_to_adc_2.bin
+arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_opamp_to_adc_2.axf" "BRD4257A_EFR32FG14P_opamp_to_adc_2.bin"
+ 
+Building s37 file: BRD4257A_EFR32FG14P_opamp_to_adc_2.s37
+arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_opamp_to_adc_2.axf" "BRD4257A_EFR32FG14P_opamp_to_adc_2.s37"
+ 
+Running size tool
+arm-none-eabi-size "BRD4257A_EFR32FG14P_opamp_to_adc_2.axf" -A
+BRD4257A_EFR32FG14P_opamp_to_adc_2.axf  :
+section              size        addr
+.text                3840           0
+.ARM.exidx              8        3840
+.data                 120   536870912
+.bss                   36   536871032
+.heap                3072   536871072
+.stack_dummy         1024   536871072
+.ARM.attributes        46           0
+.comment               77           0
+.debug_line         31283           0
+.debug_info         47703           0
+.debug_abbrev        4909           0
+.debug_aranges        824           0
+.debug_str        1292265           0
+.debug_loc          25704           0
+.debug_ranges        4408           0
+.debug_macro       189038           0
+.debug_frame         2244           0
+Total             1606601
+
+
+ 
+11:45:13 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_opamp_to_adc_2 ****
+make -j12 all 
+Building file: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/opamp/opamp_to_adc/src/main_radio14.c
+Invoking: GNU ARM C Compiler
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DEFR32FG14P233F256GM48=1' -I"C:/Users/Co-op Shaheeer R/hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/EFR32FG14_BRD4257A/config" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/CMSIS/Include" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/emlib/inc" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/bsp" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//hardware/kit/common/drivers" -I"C:/Users/Co-op Shaheeer R/SimplicityStudio/SDKs/gecko_sdk//platform/Device/SiliconLabs/EFR32FG14P/Include" -O2 -Wall -ffunction-sections -fdata-sections -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"src/main_radio14.d" -MT"src/main_radio14.o" -o "src/main_radio14.o" "C:/Users/Co-op Shaheeer R/peripheral_examples/series1/opamp/opamp_to_adc/src/main_radio14.c"
+Finished building: C:/Users/Co-op Shaheeer R/peripheral_examples/series1/opamp/opamp_to_adc/src/main_radio14.c
+ 
+Building target: BRD4257A_EFR32FG14P_opamp_to_adc_2.axf
+Invoking: GNU ARM C Linker
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "BRD4257A_EFR32FG14P_opamp_to_adc_2.ld" -Xlinker --gc-sections -Xlinker -Map="BRD4257A_EFR32FG14P_opamp_to_adc_2.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o BRD4257A_EFR32FG14P_opamp_to_adc_2.axf "./CMSIS/EFR32FG14P/startup_efr32fg14p.o" "./CMSIS/EFR32FG14P/system_efr32fg14p.o" "./emlib/em_adc.o" "./emlib/em_cmu.o" "./emlib/em_core.o" "./emlib/em_emu.o" "./emlib/em_opamp.o" "./emlib/em_system.o" "./src/main_radio14.o" -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+Finished building target: BRD4257A_EFR32FG14P_opamp_to_adc_2.axf
+ 
+Building hex file: BRD4257A_EFR32FG14P_opamp_to_adc_2.hex
+arm-none-eabi-objcopy -O ihex "BRD4257A_EFR32FG14P_opamp_to_adc_2.axf" "BRD4257A_EFR32FG14P_opamp_to_adc_2.hex"
+ 
+Building bin file: BRD4257A_EFR32FG14P_opamp_to_adc_2.bin
+arm-none-eabi-objcopy -O binary "BRD4257A_EFR32FG14P_opamp_to_adc_2.axf" "BRD4257A_EFR32FG14P_opamp_to_adc_2.bin"
+ 
+Building s37 file: BRD4257A_EFR32FG14P_opamp_to_adc_2.s37
+arm-none-eabi-objcopy -O srec "BRD4257A_EFR32FG14P_opamp_to_adc_2.axf" "BRD4257A_EFR32FG14P_opamp_to_adc_2.s37"
+ 
+Running size tool
+arm-none-eabi-size "BRD4257A_EFR32FG14P_opamp_to_adc_2.axf" -A
+BRD4257A_EFR32FG14P_opamp_to_adc_2.axf  :
+section              size        addr
+.text                3784           0
+.ARM.exidx              8        3784
+.data                 120   536870912
+.bss                   36   536871032
+.heap                3072   536871072
+.stack_dummy         1024   536871072
+.ARM.attributes        46           0
+.comment               77           0
+.debug_line         31217           0
+.debug_info         47656           0
+.debug_abbrev        4909           0
+.debug_aranges        824           0
+.debug_str        1292265           0
+.debug_loc          25704           0
+.debug_ranges        4408           0
+.debug_macro       189038           0
+.debug_frame         2240           0
+Total             1606428
+
+
+ 
+11:49:13 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
+make -j12 all 
+make: Nothing to be done for 'all'.
+16:30:24 **** Incremental Build of configuration GNU ARM v10.2.1 - debug for project BRD4257A_EFR32FG14P_adc_single_polled ****
+make -j12 all 
+make: Nothing to be done for 'all'.
