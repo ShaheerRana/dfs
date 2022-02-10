@@ -1,4 +1,4 @@
-15:33:33 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+16:49:32 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
 make -j12 all 
 Building file: ../main.c
 Invoking: GNU ARM C Compiler
@@ -7,31 +7,6 @@ arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1'
 ../main.c:276:3: warning: "/*" within comment [-Wcomment]
   276 |   /*
       |    
-../main.c: In function 'main':
-../main.c:352:28: warning: passing argument 2 of 'USART_Tx' makes integer from pointer without a cast [-Wint-conversion]
-  352 |           USART_Tx(USART1, "\n");
-      |                            ^~~~
-      |                            |
-      |                            char *
-In file included from ../main.c:29:
-C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_usart.h:1081:45: note: expected 'uint8_t' {aka 'unsigned char'} but argument is of type 'char *'
- 1081 | void USART_Tx(USART_TypeDef *usart, uint8_t data);
-      |                                     ~~~~~~~~^~~~
-../main.c:354:28: warning: passing argument 2 of 'USART_Tx' makes integer from pointer without a cast [-Wint-conversion]
-  354 |           USART_Tx(USART1, "\n");
-      |                            ^~~~
-      |                            |
-      |                            char *
-In file included from ../main.c:29:
-C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc/em_usart.h:1081:45: note: expected 'uint8_t' {aka 'unsigned char'} but argument is of type 'char *'
- 1081 | void USART_Tx(USART_TypeDef *usart, uint8_t data);
-      |                                     ~~~~~~~~^~~~
-../main.c:349:15: warning: unused variable 'a' [-Wunused-variable]
-  349 |           int a = (adcBuffer [1] >> 24) & 0xff;
-      |               ^
-../main.c:348:15: warning: unused variable 'b' [-Wunused-variable]
-  348 |           int b = (adcBuffer [1] >> 16) & 0xff;
-      |               ^
 Finished building: ../main.c
  
 Building target: empty.axf
@@ -52,27 +27,27 @@ Running size tool
 arm-none-eabi-size "empty.axf" -A
 empty.axf  :
 section              size        addr
-.text                9056           0
-.ARM.exidx              8        9056
+.text                8148           0
+.ARM.exidx              8        8148
 .stack               4096   536870912
 .data                 124   536875008
 .bss                  100   536875132
 .heap               28448   536875232
 .ARM.attributes        46           0
 .comment               77           0
-.debug_info         88500           0
-.debug_abbrev       11161           0
-.debug_loc          40391           0
-.debug_aranges       1960           0
-.debug_ranges        3416           0
-.debug_macro       192927           0
-.debug_line         61210           0
-.debug_str        1322600           0
-.debug_frame         5572           0
-Total             1769692
+.debug_info         83237           0
+.debug_abbrev       10596           0
+.debug_loc          39511           0
+.debug_aranges       1920           0
+.debug_ranges        3352           0
+.debug_macro       192236           0
+.debug_line         58035           0
+.debug_str        1322504           0
+.debug_frame         5472           0
+Total             1757910
 
 
  
 
-15:33:35 Build Finished. 0 errors, 5 warnings. (took 2s.224ms)
+16:49:34 Build Finished. 0 errors, 1 warnings. (took 2s.264ms)
 
