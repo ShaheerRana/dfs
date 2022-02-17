@@ -61,12 +61,15 @@ static volatile bool txFlag = 0;
 
 // Buffer for ADC single and scan conversion
 uint32_t adcBuffer[ADC_BUFFER_SIZE];
+uint32_t adcBuffer2[ADC_BUFFER_SIZE];
+uint32_t *active_buffer = NULL;
 uint32_t topValue;
 LDMA_TransferCfg_t trans;
 LDMA_Descriptor_t descr;
+LDMA_Descriptor_t description [2];
 
 
-
+volatile int temp;
 
 /**************************************************************************//**
  * @brief LDMA Handler
@@ -126,6 +129,48 @@ void initLetimer(void)
  *****************************************************************************/
 void initLdma(void)
 {
+
+  // Enable CMU clock
+  CMU_ClockEnable(cmuClock_LDMA, true);
+
+  // Basic LDMA configuration
+  LDMA_Init_t ldmaInit = LDMA_INIT_DEFAULT;
+
+  LDMA_Init(&ldmaInit);
+
+  // Transfers trigger off ADC single conversion complete
+  trans = (LDMA_TransferCfg_t)LDMA_TRANSFER_CFG_PERIPHERAL(ldmaPeripheralSignal_ADC0_SINGLE);
+
+  description [0]= (LDMA_Descriptor_t)LDMA_DESCRIPTOR_LINKREL_P2M_WORD(
+      &(ADC0->SINGLEDATA),  // source
+      adcBuffer,            // destination
+      ADC_BUFFER_SIZE,      // data transfer size
+      1);                   // link relative offset (links to self)
+
+  description[0].xfer.blockSize =ADC_DVL-1;    // transfers ADC_DVL number of units per arbitration cycle
+  description[0].xfer.ignoreSrec = true;       // ignores single requests to save energy
+
+
+  description [1]= (LDMA_Descriptor_t)LDMA_DESCRIPTOR_LINKREL_P2M_WORD(
+      &(ADC0->SINGLEDATA),  // source
+      adcBuffer2,            // destination
+      ADC_BUFFER_SIZE,      // data transfer size
+      -1);                   // link relative offset (links to self)
+
+  description[1].xfer.blockSize =ADC_DVL-1;    // transfers ADC_DVL number of units per arbitration cycle
+  description[1].xfer.ignoreSrec = true;       // ignores single requests to save energy
+
+  active_buffer = (int*)(LDMA_BASE + 0x094);
+  // Initialize transfer
+  LDMA_StartTransfer(LDMA_CHANNEL, &trans, &description);
+
+  // Clear pending and enable interrupts for LDMA
+  NVIC_ClearPendingIRQ(LDMA_IRQn);
+  NVIC_EnableIRQ(LDMA_IRQn);
+
+
+
+  /*
   // Enable CMU clock
   CMU_ClockEnable(cmuClock_LDMA, true);
 
@@ -151,7 +196,7 @@ void initLdma(void)
 
   // Clear pending and enable interrupts for LDMA
   NVIC_ClearPendingIRQ(LDMA_IRQn);
-  NVIC_EnableIRQ(LDMA_IRQn);
+  NVIC_EnableIRQ(LDMA_IRQn);*/
 }
 
 
