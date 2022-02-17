@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="usartDatabits16"/>
+		<item key="selection" value="GPIO"/>
 		<list key="findhistory">
+			<item value="gpio"/>
 			<item value="usartDatabits16"/>
 			<item value="16bit"/>
 			<item value="bit"/>
@@ -22,7 +23,6 @@
 			<item value="ADC_SINGLECTRL"/>
 			<item value="adcOvs"/>
 			<item value="res "/>
-			<item value=" res "/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>

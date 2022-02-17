@@ -1,4 +1,4 @@
-16:49:32 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+10:01:54 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
 make -j12 all 
 Building file: ../main.c
 Invoking: GNU ARM C Compiler
@@ -27,27 +27,27 @@ Running size tool
 arm-none-eabi-size "empty.axf" -A
 empty.axf  :
 section              size        addr
-.text                8148           0
-.ARM.exidx              8        8148
+.text                8176           0
+.ARM.exidx              8        8176
 .stack               4096   536870912
 .data                 124   536875008
 .bss                  100   536875132
 .heap               28448   536875232
 .ARM.attributes        46           0
 .comment               77           0
-.debug_info         83237           0
-.debug_abbrev       10596           0
-.debug_loc          39511           0
+.debug_info         83323           0
+.debug_abbrev       10625           0
+.debug_loc          39565           0
 .debug_aranges       1920           0
-.debug_ranges        3352           0
+.debug_ranges        3376           0
 .debug_macro       192236           0
-.debug_line         58035           0
+.debug_line         58047           0
 .debug_str        1322504           0
-.debug_frame         5472           0
-Total             1757910
+.debug_frame         5480           0
+Total             1758151
 
 
  
 
-16:49:34 Build Finished. 0 errors, 1 warnings. (took 2s.264ms)
+10:01:55 Build Finished. 0 errors, 1 warnings. (took 1s.599ms)
 
