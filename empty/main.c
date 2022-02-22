@@ -57,7 +57,7 @@
 static volatile uint32_t sample;
 static volatile uint32_t millivolts;
 
-static volatile bool txFlag = 0;
+volatile bool txDestination = 0;
 
 // Buffer for ADC single and scan conversion
 uint32_t adcBuffer[ADC_BUFFER_SIZE];
@@ -68,6 +68,7 @@ LDMA_TransferCfg_t trans;
 LDMA_Descriptor_t descr;
 LDMA_Descriptor_t description [2];
 
+volatile uint32_t *buffer_address = NULL;
 
 volatile int temp;
 
@@ -78,6 +79,10 @@ void LDMA_IRQHandler(void)
 {
   // Clear interrupt flag
   LDMA_IntClear((1 << LDMA_CHANNEL) << _LDMA_IFC_DONE_SHIFT);
+  if (txFlag)
+    {
+
+    }
   txFlag = 1;
 }
 
@@ -161,6 +166,8 @@ void initLdma(void)
   description[1].xfer.ignoreSrec = true;       // ignores single requests to save energy
 
   active_buffer = (int*)(LDMA_BASE + 0x094);
+  //*buffer_address = active_buffer;
+  buffer_address = &(adcBuffer[4]);
   // Initialize transfer
   LDMA_StartTransfer(LDMA_CHANNEL, &trans, &description);
 
@@ -368,6 +375,8 @@ int main(void)
   // Set up LETIMER to trigger ADC via PRS in 500ms intervals
   initLetimer();
 
+  int first_byte = 0x0, second_byte = 0x0;
+
   while (1)
     {
       /*
@@ -388,11 +397,15 @@ int main(void)
   */
       if (txFlag)
       {
-          int r = adcBuffer [1] & 0xff;
-          int g = (adcBuffer [1] >> 8) & 0xff;
+          for (int i = 0; i < ADC_BUFFER_SIZE; i++)
+            {
+              second_byte = adcBuffer [1] & 0xff;
+              first_byte = (adcBuffer [1] >> 8) & 0xff;
 
-          USART_Tx(USART1, g);
-          USART_Tx(USART1, r);
+              USART_Tx(USART1, first_byte);
+              USART_Tx(USART1, second_byte);
+
+            }
 
           txFlag = 0;
       }
