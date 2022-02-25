@@ -57,7 +57,7 @@
 static volatile uint32_t sample;
 static volatile uint32_t millivolts;
 
-volatile bool txDestination = 0;
+volatile uint32_t txDestination = 0;
 
 // Buffer for ADC single and scan conversion
 uint32_t adcBuffer[ADC_BUFFER_SIZE];
@@ -79,11 +79,11 @@ void LDMA_IRQHandler(void)
 {
   // Clear interrupt flag
   LDMA_IntClear((1 << LDMA_CHANNEL) << _LDMA_IFC_DONE_SHIFT);
-  if (txFlag)
+  if (txDestination)
     {
 
     }
-  txFlag = 1;
+  txDestination = 1;
 }
 
 /**************************************************************************//**
@@ -395,7 +395,7 @@ int main(void)
     USART_Tx(USART1, millivolts);
     USART_Tx(USART1, '\n');
   */
-      if (txFlag)
+      if (txDestination)
       {
           for (int i = 0; i < ADC_BUFFER_SIZE; i++)
             {
@@ -407,7 +407,7 @@ int main(void)
 
             }
 
-          txFlag = 0;
+          txDestination = 0;
       }
   }
 }
