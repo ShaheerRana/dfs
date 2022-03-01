@@ -5986,3 +5986,237 @@ com.sforce.ws.SoapFaultException: StudioService: no access allowed to this class
 
 !ENTRY com.silabs.ss.platform.rcp.core 2 0 2022-02-25 11:07:53.467
 !MESSAGE Invalid discovery key: null
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-02-25 17:08:10.283
+!MESSAGE Deleted Shared Daemon File: C:\Users\Co-op Shaheeer R\.uc\cli\mainstudio.running
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-02-25 17:08:10.283
+!MESSAGE Deleted Shared Daemon Version File: C:\Users\Co-op Shaheeer R\.uc\cli\mainstudio.running.version
+!SESSION 2022-03-01 09:50:28.623 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=11.0.5
+java.vendor=Amazon.com Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_CA
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.silabs.ss.platform.jetty.server 1 0 2022-03-01 09:50:36.264
+!MESSAGE ContentServer started at: 127.0.0.1, 59054
+
+!ENTRY com.silabs.ss.platform.rcp.core 1 0 2022-03-01 09:50:36.331
+!MESSAGE com.silabs.ss.tool.launcher.product found! Writing main studio shared file
+
+!ENTRY com.silabs.ss.platform.useraccounts.core 4 0 2022-03-01 09:51:10.111
+!MESSAGE Error in connection authentication or validation
+!STACK 0
+com.sforce.ws.SoapFaultException: StudioService: no access allowed to this class.
+	at com.sforce.ws.transport.SoapConnection.createException(SoapConnection.java:212)
+	at com.sforce.ws.transport.SoapConnection.receive(SoapConnection.java:156)
+	at com.sforce.ws.transport.SoapConnection.send(SoapConnection.java:99)
+	at com.sforce.soap.StudioService.SoapConnection.isValidated(SoapConnection.java:177)
+	at com.silabs.ss.platform.internal.useraccounts.core.salesforce.impl.SilabsSFAuthService.isValidated(SilabsSFAuthService.java:1001)
+	at com.silabs.ss.platform.internal.useraccounts.core.salesforce.impl.SilabsSFAuthService.createConnection(SilabsSFAuthService.java:240)
+	at com.silabs.ss.platform.internal.useraccounts.core.salesforce.impl.SilabsSFAuthService.getSecuredUpdateRepos(SilabsSFAuthService.java:333)
+	at com.silabs.ss.tool.internal.api.installer.core.SLSP2UpdateSites.fetchSFSecureModeUpdateSites(SLSP2UpdateSites.java:346)
+	at com.silabs.ss.tool.internal.api.installer.core.SLSP2UpdateSites.ensureStudioRepos(SLSP2UpdateSites.java:255)
+	at com.silabs.ss.tool.internal.api.installer.core.SLSP2UpdateSites.ensureStudioReposLoaded(SLSP2UpdateSites.java:619)
+	at com.silabs.ss.tool.internal.api.installer.core.InstallerUtils.ensurePackagesFetched(InstallerUtils.java:1908)
+	at com.silabs.ss.tool.internal.installer.core.updates.UpdateManager.updatePackageMetadata(UpdateManager.java:212)
+	at com.silabs.ss.tool.internal.installer.core.updates.UpdateManager.ensureUpdatesFetched(UpdateManager.java:278)
+	at com.silabs.ss.tool.internal.installer.core.updates.UpdateManager$1.run(UpdateManager.java:166)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-03-01 09:51:10.279
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.tool.installer.core 2 0 2022-03-01 09:51:14.449
+!MESSAGE Problem getting package resources: changelog
+
+!ENTRY com.silabs.ss.platform.content.core 4 0 2022-03-01 09:51:17.411
+!MESSAGE Local timestamp file does not exist: C:\SiliconLabs\SimplicityStudio\v5\offline\common\Simplicity_Studio_Terms_of_Use_and_Privacy_Statement.timestamp
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2022-03-01 09:59:49.767
+!MESSAGE Invalid discovery key: null
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:05:29.831
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:05:32.692
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:08:33.736
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:08:36.191
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:14:42.009
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:14:44.486
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:17:38.381
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:17:40.761
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:22:16.406
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:22:19.019
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:30:32.271
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:30:34.774
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:32:34.386
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:32:36.798
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:34:22.597
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:34:25.211
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:34:56.058
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:34:58.517
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:35:44.166
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:35:46.502
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:36:25.935
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:36:28.301
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:39:44.197
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:39:46.646
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:41:00.067
+!MESSAGE Fail to write memory.
+!STACK 0
+java.util.concurrent.ExecutionException: TCF task aborted
+	at org.eclipse.tcf.util.TCFTask.get(TCFTask.java:281)
+	at org.eclipse.cdt.debug.edc.internal.services.dsf.MemoryCache.writeBlock(MemoryCache.java:728)
+	at org.eclipse.cdt.debug.edc.internal.services.dsf.MemoryCache.setMemory(MemoryCache.java:611)
+	at org.eclipse.cdt.debug.edc.internal.services.dsf.Memory$7.run(Memory.java:583)
+	at org.eclipse.cdt.debug.edc.services.AbstractEDCService$SafeRunner.run(AbstractEDCService.java:193)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.eclipse.tcf.internal.services.remote.MemoryProxy$MemoryErrorReport: TCF command exception:
+Command: Memory set "rc.root.000440136398.m.C", 641, 1, 4, 0, "RhAiGA=="
+Exception: Flash writes must be word aligned
+Error code: 131073
+	at org.eclipse.tcf.internal.services.remote.MemoryProxy$MemoryCommand.toMemoryError(MemoryProxy.java:379)
+	at org.eclipse.tcf.internal.services.remote.MemoryProxy$MemContext$3.done(MemoryProxy.java:276)
+	at org.eclipse.tcf.core.Command.result(Command.java:121)
+	at org.eclipse.tcf.core.AbstractChannel.handleInput(AbstractChannel.java:1116)
+	at org.eclipse.tcf.core.AbstractChannel.access$0(AbstractChannel.java:1058)
+	at org.eclipse.tcf.core.AbstractChannel$1$1.run(AbstractChannel.java:369)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	... 1 more
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:42:13.855
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:42:16.417
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:48:05.125
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:48:07.728
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:48:46.165
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:48:48.698
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:50:52.373
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:50:54.831
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:53:20.217
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:53:22.671
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:54:51.326
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:54:53.666
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:55:28.166
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:55:30.498
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.platform.rcp.core 2 0 2022-03-01 10:57:24.288
+!MESSAGE Invalid discovery key: null
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:57:29.058
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:57:31.396
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:57:53.353
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:57:55.789
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:58:46.887
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:58:49.238
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:59:36.305
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 10:59:38.648
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 10:59:58.321
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 11:00:00.668
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 11:00:38.976
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 11:00:41.409
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-03-01 11:01:41.125
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-03-01 11:01:43.448
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
