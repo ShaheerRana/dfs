@@ -83,7 +83,6 @@ void LDMA_IRQHandler(void)
     {
       break;
     }
-  //check an offset that alternates between 0 and halfway and add it to txDestination
   txDestination = *active_buffer + *active_buffer - buffer_address ;
 }
 

@@ -37,7 +37,7 @@
 #define RESISTOR_SELECT opaResSelR2eqR1
 
 
-#define ADC_BUFFER_SIZE 8 //must be even
+#define ADC_BUFFER_SIZE 8
 
 // Change this to set how many samples get sent at once
 #define ADC_DVL         2
@@ -81,10 +81,9 @@ void LDMA_IRQHandler(void)
   LDMA_IntClear((1 << LDMA_CHANNEL) << _LDMA_IFC_DONE_SHIFT);
   if (txDestination)
     {
-      break;
+
     }
-  //check an offset that alternates between 0 and halfway and add it to txDestination
-  txDestination = *active_buffer + *active_buffer - buffer_address ;
+  txDestination = *active_buffer;
 }
 
 /**************************************************************************//**
@@ -141,7 +140,7 @@ void initLdma(void)
 
   // Basic LDMA configuration
   LDMA_Init_t ldmaInit = LDMA_INIT_DEFAULT;
-  buffer_address = &(adcBuffer[ADC_BUFFER_SIZE / 2]);
+  buffer_address = &(adcBuffer[4]);
 
   LDMA_Init(&ldmaInit);
 
@@ -403,13 +402,12 @@ int main(void)
               second_byte = adcBuffer [1] & 0xff;
               first_byte = (adcBuffer [1] >> 8) & 0xff;
 
-              //txDestination += 4;
+              //txDestination += i * 4;
               //second_byte = &txDestination & 0xff;
               //first_byte = (&txDestination >> 8) & 0xff;
 
               USART_Tx(USART1, first_byte);
               USART_Tx(USART1, second_byte);
-              //add safety check in between for loops for UART tx
             }
 
           txDestination = 0;
