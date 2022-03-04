@@ -1,20 +1,18 @@
-11:23:15 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+10:45:15 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
 make -j12 all 
 Building file: ../main.c
 Invoking: GNU ARM C Compiler
 arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -std=c99 '-DDEBUG_EFM=1' '-DEFR32FG14P233F256GM48=1' '-DSL_BOARD_NAME="BRD4259A"' '-DSL_BOARD_REV="A01"' '-DSL_COMPONENT_CATALOG_PRESENT=1' -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\config" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\autogen" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\Device\SiliconLabs\EFR32FG14P\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\board\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\CMSIS\Include" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\device_init\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\emlib\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\hardware\driver\mx25_flash_shutdown\inc\sl_mx25_flash_shutdown_usart" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\common\toolchain\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\system\inc" -I"C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\platform\service\udelay\inc" -Os -Wall -Wextra -fno-builtin -ffunction-sections -fdata-sections -imacrossl_gcc_preinclude.h -mfpu=fpv4-sp-d16 -mfloat-abi=softfp -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
 ../main.c: In function 'LDMA_IRQHandler':
-../main.c:86:51: error: invalid operands to binary - (have 'uint32_t' {aka 'long unsigned int'} and 'volatile uint32_t *' {aka 'volatile long unsigned int *'})
-   86 |   txDestination = *active_buffer + *active_buffer - buffer_address ;
-      |                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
-      |                                  |
-      |                                  uint32_t {aka long unsigned int}
+../main.c:90:19: warning: assignment to 'volatile uint32_t *' {aka 'volatile long unsigned int *'} from 'uint32_t' {aka 'long unsigned int'} makes pointer from integer without a cast [-Wint-conversion]
+   90 |     txDestination = *active_buffer;
+      |                   ^
 ../main.c: In function 'initLdma':
-../main.c:169:17: warning: assignment to 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'int *' [-Wincompatible-pointer-types]
-  169 |   active_buffer = (int*)(LDMA_BASE + 0x094);
+../main.c:173:17: warning: assignment to 'uint32_t *' {aka 'long unsigned int *'} from incompatible pointer type 'int *' [-Wincompatible-pointer-types]
+  173 |   active_buffer = (int*)(LDMA_BASE + 0x094);
       |                 ^
-../main.c:172:44: warning: passing argument 3 of 'LDMA_StartTransfer' from incompatible pointer type [-Wincompatible-pointer-types]
-  172 |   LDMA_StartTransfer(LDMA_CHANNEL, &trans, &description);
+../main.c:176:44: warning: passing argument 3 of 'LDMA_StartTransfer' from incompatible pointer type [-Wincompatible-pointer-types]
+  176 |   LDMA_StartTransfer(LDMA_CHANNEL, &trans, &description);
       |                                            ^~~~~~~~~~~~
       |                                            |
       |                                            LDMA_Descriptor_t (*)[2]
@@ -23,11 +21,50 @@ C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty\gecko_sdk_4.0.0\pl
  2636 |                         const LDMA_Descriptor_t  *descriptor);
       |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
 ../main.c: In function 'initOpamp':
-../main.c:328:3: warning: "/*" within comment [-Wcomment]
-  328 |   /*
+../main.c:332:3: warning: "/*" within comment [-Wcomment]
+  332 |   /*
       |    
-make: *** [subdir.mk:30: main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
+Finished building: ../main.c
+ 
+Building target: empty.axf
+Invoking: GNU ARM C Linker
+arm-none-eabi-gcc -g3 -gdwarf-2 -mcpu=cortex-m4 -mthumb -T "C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\empty/autogen/linkerfile.ld" -Xlinker --gc-sections -Xlinker -Map="empty.map" -mfpu=fpv4-sp-d16 -mfloat-abi=softfp --specs=nano.specs -o empty.axf -Wl,--start-group "./app.o" "./main.o" "./autogen/sl_board_default_init.o" "./autogen/sl_device_init_clocks.o" "./autogen/sl_event_handler.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_control_gpio.o" "./gecko_sdk_4.0.0/hardware/board/src/sl_board_init.o" "./gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/src/sl_mx25_flash_shutdown_usart/sl_mx25_flash_shutdown.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o" "./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_core.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_system.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o" "./gecko_sdk_4.0.0/platform/emlib/src/em_vdac.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_dcdc_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_emu_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_hfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_lfxo_s1.o" "./gecko_sdk_4.0.0/platform/service/device_init/src/sl_device_init_nvic.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_init.o" "./gecko_sdk_4.0.0/platform/service/system/src/sl_system_process_action.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay.o" "./gecko_sdk_4.0.0/platform/service/udelay/src/sl_udelay_armv6m_gcc.o" -lgcc -lc -lm -lnosys -Wl,--end-group -Wl,--start-group -lgcc -lc -lnosys -Wl,--end-group
+Finished building target: empty.axf
+ 
+Building hex file: empty.hex
+arm-none-eabi-objcopy -O ihex "empty.axf" "empty.hex"
+ 
+Building bin file: empty.bin
+arm-none-eabi-objcopy -O binary "empty.axf" "empty.bin"
+ 
+Building s37 file: empty.s37
+arm-none-eabi-objcopy -O srec "empty.axf" "empty.s37"
+ 
+Running size tool
+arm-none-eabi-size "empty.axf" -A
+empty.axf  :
+section              size        addr
+.text                8264           0
+.ARM.exidx              8        8264
+.stack               4096   536870912
+.data                 124   536875008
+.bss                  128   536875132
+.heap               28416   536875264
+.ARM.attributes        46           0
+.comment               77           0
+.debug_info         83419           0
+.debug_abbrev       10694           0
+.debug_loc          39565           0
+.debug_aranges       1920           0
+.debug_ranges        3376           0
+.debug_macro       192236           0
+.debug_line         58249           0
+.debug_str        1322575           0
+.debug_frame         5488           0
+Total             1758681
 
-11:23:15 Build Failed. 2 errors, 3 warnings. (took 412ms)
+
+ 
+
+10:45:16 Build Finished. 0 errors, 4 warnings. (took 1s.471ms)
 

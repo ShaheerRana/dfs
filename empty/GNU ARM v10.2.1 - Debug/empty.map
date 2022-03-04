@@ -3846,22 +3846,22 @@ LOAD c:/siliconlabs/simplicitystudio/v5/developer/toolchains/gnu_arm/10.2_2020q4
                 0x00000130                _start
                 0x00000130                _mainCRTStartup
  .text.LDMA_IRQHandler
-                0x000001a4       0x2c ./main.o
+                0x000001a4       0x34 ./main.o
                 0x000001a4                LDMA_IRQHandler
  .text.initLetimer
-                0x000001d0       0x9c ./main.o
-                0x000001d0                initLetimer
+                0x000001d8       0x9c ./main.o
+                0x000001d8                initLetimer
  .text.initLdma
-                0x0000026c       0xb0 ./main.o
-                0x0000026c                initLdma
- .text.initAdc  0x0000031c       0xd0 ./main.o
-                0x0000031c                initAdc
+                0x00000274       0xb0 ./main.o
+                0x00000274                initLdma
+ .text.initAdc  0x00000324       0xd0 ./main.o
+                0x00000324                initAdc
  .text.initUSART
-                0x000003ec       0x5c ./main.o
-                0x000003ec                initUSART
+                0x000003f4       0x5c ./main.o
+                0x000003f4                initUSART
  .text.startup.main
-                0x00000448       0x78 ./main.o
-                0x00000448                main
+                0x00000450       0x70 ./main.o
+                0x00000450                main
  .text.Default_Handler
                 0x000004c0        0x2 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
                 0x000004c0                DebugMon_Handler
@@ -4370,53 +4370,53 @@ LOAD linker stubs
  .comment       0x0000004d       0x4e ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
  .comment       0x0000004d       0x4e ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
-.debug_info     0x00000000    0x145e3
- .debug_info    0x00000000     0x4096 ./main.o
- .debug_info    0x00004096      0x247 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
- .debug_info    0x000042dd      0xa34 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
- .debug_info    0x00004d11      0x209 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
- .debug_info    0x00004f1a     0x21c4 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
- .debug_info    0x000070de       0x8a ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
- .debug_info    0x00007168     0x3e7a ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
- .debug_info    0x0000afe2     0x1125 ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
- .debug_info    0x0000c107     0x377f ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
- .debug_info    0x0000f886      0xfce ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
- .debug_info    0x00010854     0x173e ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
- .debug_info    0x00011f92      0x85a ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
- .debug_info    0x000127ec      0x906 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
- .debug_info    0x000130f2     0x14f1 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
+.debug_info     0x00000000    0x145db
+ .debug_info    0x00000000     0x408e ./main.o
+ .debug_info    0x0000408e      0x247 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
+ .debug_info    0x000042d5      0xa34 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
+ .debug_info    0x00004d09      0x209 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
+ .debug_info    0x00004f12     0x21c4 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
+ .debug_info    0x000070d6       0x8a ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
+ .debug_info    0x00007160     0x3e7a ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
+ .debug_info    0x0000afda     0x1125 ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
+ .debug_info    0x0000c0ff     0x377f ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
+ .debug_info    0x0000f87e      0xfce ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
+ .debug_info    0x0001084c     0x173e ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
+ .debug_info    0x00011f8a      0x85a ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
+ .debug_info    0x000127e4      0x906 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
+ .debug_info    0x000130ea     0x14f1 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
-.debug_abbrev   0x00000000     0x29cb
- .debug_abbrev  0x00000000      0x37a ./main.o
- .debug_abbrev  0x0000037a      0x157 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
- .debug_abbrev  0x000004d1      0x239 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
- .debug_abbrev  0x0000070a      0x121 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
- .debug_abbrev  0x0000082b      0x3c0 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
- .debug_abbrev  0x00000beb       0x6f ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
- .debug_abbrev  0x00000c5a      0x558 ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
- .debug_abbrev  0x000011b2      0x316 ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
- .debug_abbrev  0x000014c8      0x57a ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
- .debug_abbrev  0x00001a42      0x331 ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
- .debug_abbrev  0x00001d73      0x410 ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
- .debug_abbrev  0x00002183      0x2c8 ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
- .debug_abbrev  0x0000244b      0x267 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
- .debug_abbrev  0x000026b2      0x319 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
+.debug_abbrev   0x00000000     0x29c6
+ .debug_abbrev  0x00000000      0x375 ./main.o
+ .debug_abbrev  0x00000375      0x157 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
+ .debug_abbrev  0x000004cc      0x239 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
+ .debug_abbrev  0x00000705      0x121 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
+ .debug_abbrev  0x00000826      0x3c0 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
+ .debug_abbrev  0x00000be6       0x6f ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
+ .debug_abbrev  0x00000c55      0x558 ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
+ .debug_abbrev  0x000011ad      0x316 ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
+ .debug_abbrev  0x000014c3      0x57a ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
+ .debug_abbrev  0x00001a3d      0x331 ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
+ .debug_abbrev  0x00001d6e      0x410 ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
+ .debug_abbrev  0x0000217e      0x2c8 ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
+ .debug_abbrev  0x00002446      0x267 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
+ .debug_abbrev  0x000026ad      0x319 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
-.debug_loc      0x00000000     0x9ac8
- .debug_loc     0x00000000      0x1fa ./main.o
- .debug_loc     0x000001fa       0xda ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
- .debug_loc     0x000002d4       0xd8 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
- .debug_loc     0x000003ac       0x9c ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
- .debug_loc     0x00000448     0x1291 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
- .debug_loc     0x000016d9       0x2a ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
- .debug_loc     0x00001703     0x316e ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
- .debug_loc     0x00004871      0x8ae ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
- .debug_loc     0x0000511f     0x2314 ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
- .debug_loc     0x00007433      0xcaf ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
- .debug_loc     0x000080e2      0x63a ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
- .debug_loc     0x0000871c      0x4de ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
- .debug_loc     0x00008bfa      0x47a ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
- .debug_loc     0x00009074      0xa54 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
+.debug_loc      0x00000000     0x9a8d
+ .debug_loc     0x00000000      0x1bf ./main.o
+ .debug_loc     0x000001bf       0xda ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
+ .debug_loc     0x00000299       0xd8 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
+ .debug_loc     0x00000371       0x9c ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
+ .debug_loc     0x0000040d     0x1291 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
+ .debug_loc     0x0000169e       0x2a ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
+ .debug_loc     0x000016c8     0x316e ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
+ .debug_loc     0x00004836      0x8ae ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
+ .debug_loc     0x000050e4     0x2314 ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
+ .debug_loc     0x000073f8      0xcaf ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
+ .debug_loc     0x000080a7      0x63a ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
+ .debug_loc     0x000086e1      0x4de ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
+ .debug_loc     0x00008bbf      0x47a ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
+ .debug_loc     0x00009039      0xa54 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
 .debug_aranges  0x00000000      0x780
  .debug_aranges
@@ -4448,21 +4448,21 @@ LOAD linker stubs
  .debug_aranges
                 0x000006c8       0xb8 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
-.debug_ranges   0x00000000      0xd38
- .debug_ranges  0x00000000       0x98 ./main.o
- .debug_ranges  0x00000098       0x18 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
- .debug_ranges  0x000000b0       0x58 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
- .debug_ranges  0x00000108       0x20 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
- .debug_ranges  0x00000128       0xb0 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
- .debug_ranges  0x000001d8       0x10 ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
- .debug_ranges  0x000001e8      0x380 ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
- .debug_ranges  0x00000568      0x188 ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
- .debug_ranges  0x000006f0      0x3b0 ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
- .debug_ranges  0x00000aa0       0xc0 ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
- .debug_ranges  0x00000b60       0x70 ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
- .debug_ranges  0x00000bd0       0x68 ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
- .debug_ranges  0x00000c38       0x58 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
- .debug_ranges  0x00000c90       0xa8 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
+.debug_ranges   0x00000000      0xd30
+ .debug_ranges  0x00000000       0x90 ./main.o
+ .debug_ranges  0x00000090       0x18 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
+ .debug_ranges  0x000000a8       0x58 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
+ .debug_ranges  0x00000100       0x20 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
+ .debug_ranges  0x00000120       0xb0 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
+ .debug_ranges  0x000001d0       0x10 ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
+ .debug_ranges  0x000001e0      0x380 ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
+ .debug_ranges  0x00000560      0x188 ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
+ .debug_ranges  0x000006e8      0x3b0 ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
+ .debug_ranges  0x00000a98       0xc0 ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
+ .debug_ranges  0x00000b58       0x70 ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
+ .debug_ranges  0x00000bc8       0x68 ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
+ .debug_ranges  0x00000c30       0x58 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
+ .debug_ranges  0x00000c88       0xa8 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
 .debug_macro    0x00000000    0x2eeec
  .debug_macro   0x00000000      0x370 ./main.o
@@ -4556,21 +4556,21 @@ LOAD linker stubs
  .debug_macro   0x0002eafa      0x307 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
  .debug_macro   0x0002ee01       0xeb ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
-.debug_line     0x00000000     0xe37d
- .debug_line    0x00000000      0xe79 ./main.o
- .debug_line    0x00000e79      0x947 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
- .debug_line    0x000017c0      0xa48 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
- .debug_line    0x00002208      0x3f6 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
- .debug_line    0x000025fe     0x1385 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
- .debug_line    0x00003983      0x1f2 ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
- .debug_line    0x00003b75     0x2916 ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
- .debug_line    0x0000648b     0x10fe ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
- .debug_line    0x00007589     0x2322 ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
- .debug_line    0x000098ab      0xf1a ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
- .debug_line    0x0000a7c5      0xe62 ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
- .debug_line    0x0000b627      0xe5e ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
- .debug_line    0x0000c485      0xc19 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
- .debug_line    0x0000d09e     0x12df ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
+.debug_line     0x00000000     0xe389
+ .debug_line    0x00000000      0xe85 ./main.o
+ .debug_line    0x00000e85      0x947 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
+ .debug_line    0x000017cc      0xa48 ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
+ .debug_line    0x00002214      0x3f6 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
+ .debug_line    0x0000260a     0x1385 ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
+ .debug_line    0x0000398f      0x1f2 ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
+ .debug_line    0x00003b81     0x2916 ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
+ .debug_line    0x00006497     0x10fe ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
+ .debug_line    0x00007595     0x2322 ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
+ .debug_line    0x000098b7      0xf1a ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
+ .debug_line    0x0000a7d1      0xe62 ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
+ .debug_line    0x0000b633      0xe5e ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
+ .debug_line    0x0000c491      0xc19 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
+ .debug_line    0x0000d0aa     0x12df ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
 .debug_str      0x00000000   0x142e4f
  .debug_str     0x00000000   0x13c5cb ./main.o

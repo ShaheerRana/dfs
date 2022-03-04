@@ -81,10 +81,13 @@ void LDMA_IRQHandler(void)
   LDMA_IntClear((1 << LDMA_CHANNEL) << _LDMA_IFC_DONE_SHIFT);
   if (txDestination)
     {
-      break;
+      return;
     }
   //check an offset that alternates between 0 and halfway and add it to txDestination
-  txDestination = *active_buffer + *active_buffer - buffer_address ;
+  if (active_buffer < buffer_address)
+    txDestination = buffer_address;
+  else
+    txDestination = buffer_address * ADC_BUFFER_SIZE / 2 * 4;
 }
 
 /**************************************************************************//**
@@ -293,6 +296,9 @@ void initUSART (void)
   USART_InitAsync(USART1, &init);
   USART1->ROUTELOC0 = USART_ROUTELOC0_RXLOC_LOC11 | USART_ROUTELOC0_TXLOC_LOC11;
   USART1->ROUTEPEN |= USART_ROUTEPEN_TXPEN | USART_ROUTEPEN_RXPEN;
+  //LDMA_BASE + 0x010
+  uint32_t uart_idle = USART1->STATUS & USART_STATUS_TXIDLE;
+
 }
 
 /**************************************************************************//**
@@ -398,14 +404,14 @@ int main(void)
   */
       if (*txDestination)
       {
-          for (int i = 0; i < ADC_BUFFER_SIZE; i++)
+          for (int i = 0; i < ADC_BUFFER_SIZE / 2; i++)
             {
-              second_byte = adcBuffer [1] & 0xff;
-              first_byte = (adcBuffer [1] >> 8) & 0xff;
+              //second_byte = adcBuffer [1] & 0xff;
+             // first_byte = (adcBuffer [1] >> 8) & 0xff;
 
               //txDestination += 4;
-              //second_byte = &txDestination & 0xff;
-              //first_byte = (&txDestination >> 8) & 0xff;
+              second_byte = txDestination[i] & 0xff;
+              first_byte = (txDestination[i] >> 8) & 0xff;
 
               USART_Tx(USART1, first_byte);
               USART_Tx(USART1, second_byte);

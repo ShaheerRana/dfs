@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="buffer_address"/>
+		<item key="selection" value="adcBuffer2"/>
 		<list key="findhistory">
+			<item value="adcBuffer2"/>
 			<item value="buffer_address"/>
 			<item value="dst"/>
 			<item value="ch0d"/>
@@ -22,7 +23,6 @@
 			<item value="align"/>
 			<item value="message"/>
 			<item value="vdAC"/>
-			<item value="cmuClock_VDAC0"/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>
