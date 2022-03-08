@@ -56,6 +56,8 @@
 // won't be optimized out by the compiler
 static volatile uint32_t sample;
 static volatile uint32_t millivolts;
+static uint8_t first_byte = 0x0;
+static uint8_t second_byte = 0x0;
 
 volatile uint32_t *txDestination = 0;
 
@@ -87,7 +89,7 @@ void LDMA_IRQHandler(void)
   if (active_buffer < buffer_address)
     txDestination = buffer_address;
   else
-    txDestination = buffer_address * ADC_BUFFER_SIZE / 2 * 4;
+    txDestination = buffer_address -(int)(ADC_BUFFER_SIZE / 2);
 }
 
 /**************************************************************************//**
@@ -297,7 +299,7 @@ void initUSART (void)
   USART1->ROUTELOC0 = USART_ROUTELOC0_RXLOC_LOC11 | USART_ROUTELOC0_TXLOC_LOC11;
   USART1->ROUTEPEN |= USART_ROUTEPEN_TXPEN | USART_ROUTEPEN_RXPEN;
   //LDMA_BASE + 0x010
-  uint32_t uart_idle = USART1->STATUS & USART_STATUS_TXIDLE;
+  //uint32_t uart_idle = USART1->STATUS & USART_STATUS_TXIDLE;
 
 }
 
@@ -382,7 +384,6 @@ int main(void)
   // Set up LETIMER to trigger ADC via PRS in 500ms intervals
   initLetimer();
 
-  int first_byte = 0x0, second_byte = 0x0;
 
   while (1)
     {
@@ -402,20 +403,20 @@ int main(void)
     USART_Tx(USART1, millivolts);
     USART_Tx(USART1, '\n');
   */
-      if (*txDestination)
+      if ((USART1->STATUS & USART_STATUS_TXIDLE) && *txDestination)
       {
           for (int i = 0; i < ADC_BUFFER_SIZE / 2; i++)
             {
               //second_byte = adcBuffer [1] & 0xff;
              // first_byte = (adcBuffer [1] >> 8) & 0xff;
 
-              //txDestination += 4;
-              second_byte = txDestination[i] & 0xff;
-              first_byte = (txDestination[i] >> 8) & 0xff;
+              second_byte = *txDestination & 0xff;
+              first_byte = (*txDestination >> 8) & 0xff;
 
               USART_Tx(USART1, first_byte);
               USART_Tx(USART1, second_byte);
               //add safety check in between for loops for UART tx
+              txDestination++;
             }
 
           txDestination = 0;
