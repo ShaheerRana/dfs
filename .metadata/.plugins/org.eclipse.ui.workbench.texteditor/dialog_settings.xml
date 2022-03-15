@@ -6,12 +6,13 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="IDLE"/>
+		<item key="selection" value="buffer_address"/>
 		<list key="findhistory">
+			<item value="buffer_address"/>
+			<item value="temp"/>
 			<item value="IDLE"/>
 			<item value="idle"/>
 			<item value="adcBuffer2"/>
-			<item value="buffer_address"/>
 			<item value="dst"/>
 			<item value="ch0d"/>
 			<item value="ch0_d"/>
@@ -22,7 +23,6 @@
 			<item value="usartDatabits16"/>
 			<item value="16bit"/>
 			<item value="bit"/>
-			<item value="align"/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>

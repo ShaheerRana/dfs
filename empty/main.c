@@ -81,15 +81,16 @@ void LDMA_IRQHandler(void)
 {
   // Clear interrupt flag
   LDMA_IntClear((1 << LDMA_CHANNEL) << _LDMA_IFC_DONE_SHIFT);
-  if (txDestination)
+  if ((void*)txDestination)
     {
+      temp++;
       return;
     }
   //check an offset that alternates between 0 and halfway and add it to txDestination
   if (active_buffer < buffer_address)
     txDestination = (void*)buffer_address;
   else
-    txDestination = (void*)(buffer_address -(int)(ADC_BUFFER_SIZE / 2));
+    txDestination = ((void*)buffer_address -(int)(ADC_BUFFER_SIZE / 2) * 4);
 }
 
 /**************************************************************************//**
@@ -403,22 +404,25 @@ int main(void)
     USART_Tx(USART1, millivolts);
     USART_Tx(USART1, '\n');
   */
-      if ((USART1->STATUS & USART_STATUS_TXIDLE) && *txDestination)
+      //temp = *txDestination;
+      if (*txDestination)
       {
           for (int i = 0; i < ADC_BUFFER_SIZE / 2; i++)
             {
-              //second_byte = adcBuffer [1] & 0xff;
-             // first_byte = (adcBuffer [1] >> 8) & 0xff;
+              while (!(USART1->STATUS & USART_STATUS_TXBL)) {
+              } //from em_usart.c
 
-              second_byte = *txDestination & 0xff;
-              first_byte = (*txDestination >> 8) & 0xff;
+              //second_byte = txDestination [i] & 0xff;
+              //first_byte = (txDestination [i]>> 8) & 0xff;
 
-              USART_Tx(USART1, first_byte);
-              USART_Tx(USART1, second_byte);
+              //USART_Tx(USART1, first_byte);
+              //USART_Tx(USART1, second_byte);
+              USART_TxDouble (USART1, txDestination[i]);
               //add safety check in between for loops for UART tx
-              txDestination++;
-            }
+              //txDestination++;
+              //txDestination = (void*)txDestination + 4;
 
+            }
           txDestination = 0;
       }
   }
