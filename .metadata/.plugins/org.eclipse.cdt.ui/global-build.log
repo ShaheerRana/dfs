@@ -2827,3 +2827,12 @@ Total             1758105
 11:16:16 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
 make -j12 all 
 make: Nothing to be done for 'all'.
+12:22:00 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+make -j12 all 
+make: Nothing to be done for 'all'.
+12:41:04 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+make -j12 all 
+make: Nothing to be done for 'all'.
+13:08:28 **** Incremental Build of configuration GNU ARM v10.2.1 - Debug for project empty ****
+make -j12 all 
+make: Nothing to be done for 'all'.

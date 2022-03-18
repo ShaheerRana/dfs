@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdtprojectproperties>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.IncludePaths">
+<language name="C Source File">
+<includepath workspace_path="true">/${ProjName}/config</includepath>
+<includepath workspace_path="true">/${ProjName}/autogen</includepath>
+<includepath workspace_path="true">/${ProjName}</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Include</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/hardware/board/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/CMSIS/Include</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/service/device_init/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/emlib/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/emlib/host/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/common/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/inc/sl_mx25_flash_shutdown_usart</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/common/toolchain/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/service/system/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/service/udelay/inc</includepath>
+
+</language>
+<language name="asm,s,S,S79,s79">
+<includepath workspace_path="true">/${ProjName}/config</includepath>
+<includepath workspace_path="true">/${ProjName}/autogen</includepath>
+<includepath workspace_path="true">/${ProjName}</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Include</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/hardware/board/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/CMSIS/Include</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/service/device_init/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/emlib/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/emlib/host/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/common/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/hardware/driver/mx25_flash_shutdown/inc/sl_mx25_flash_shutdown_usart</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/common/toolchain/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/service/system/inc</includepath>
+<includepath workspace_path="true">/${ProjName}/gecko_sdk_4.0.0/platform/service/udelay/inc</includepath>
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+<section name="org.eclipse.cdt.internal.ui.wizards.settingswizards.Macros">
+<language name="C Source File">
+<macro>
+<name>DEBUG_EFM</name><value>1</value>
+</macro>
+<macro>
+<name>EFR32FG14P233F256GM48</name><value>1</value>
+</macro>
+<macro>
+<name>SL_BOARD_NAME</name><value>"BRD4259A"</value>
+</macro>
+<macro>
+<name>SL_BOARD_REV</name><value>"A01"</value>
+</macro>
+<macro>
+<name>SL_COMPONENT_CATALOG_PRESENT</name><value>1</value>
+</macro>
+
+</language>
+<language name="asm,s,S,S79,s79">
+<macro>
+<name>DEBUG_EFM</name><value>1</value>
+</macro>
+<macro>
+<name>EFR32FG14P233F256GM48</name><value>1</value>
+</macro>
+<macro>
+<name>SL_BOARD_NAME</name><value>"BRD4259A"</value>
+</macro>
+<macro>
+<name>SL_BOARD_REV</name><value>"A01"</value>
+</macro>
+<macro>
+<name>SL_COMPONENT_CATALOG_PRESENT</name><value>1</value>
+</macro>
+
+</language>
+<language name="Object File">
+
+</language>
+</section>
+</cdtprojectproperties>
