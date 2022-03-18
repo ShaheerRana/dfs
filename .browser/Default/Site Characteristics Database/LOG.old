@@ -1,3 +1,5 @@
-2022/02/01-13:03:44.511 af0 Reusing MANIFEST C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\.browser\Default\Site Characteristics Database/MANIFEST-000001
-2022/02/01-13:03:44.512 af0 Recovering log #3
-2022/02/01-13:03:44.512 af0 Reusing old log C:\Users\Co-op Shaheeer R\SimplicityStudio\v5_workspace\.browser\Default\Site Characteristics Database/000003.log 
+2022/03/18-09:19:40.140 139c Log #3: 22 ops saved to Table #4 OK
+2022/03/18-09:19:40.142 139c Archiving C:\Users\Co-op Shaheeer R\SimplicityStudio\dfs\.browser\Default\Site Characteristics Database/000003.log: OK
+2022/03/18-09:19:40.142 139c Table #4: 22 entries OK
+2022/03/18-09:19:40.144 139c Archiving C:\Users\Co-op Shaheeer R\SimplicityStudio\dfs\.browser\Default\Site Characteristics Database/MANIFEST-000001: OK
+2022/03/18-09:19:40.154 139c **** Repaired leveldb C:\Users\Co-op Shaheeer R\SimplicityStudio\dfs\.browser\Default\Site Characteristics Database; recovered 1 files; 520 bytes. Some data may have been lost. ****

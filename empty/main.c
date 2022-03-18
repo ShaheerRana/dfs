@@ -72,7 +72,7 @@ LDMA_Descriptor_t description [2];
 
 volatile uint32_t *buffer_address = NULL;
 
-volatile int temp;
+volatile int temp, temp1;
 
 /**************************************************************************//**
  * @brief LDMA Handler
@@ -83,14 +83,23 @@ void LDMA_IRQHandler(void)
   LDMA_IntClear((1 << LDMA_CHANNEL) << _LDMA_IFC_DONE_SHIFT);
   if ((void*)txDestination)
     {
-      temp++;
+      //temp++;
       return;
     }
   //check an offset that alternates between 0 and halfway and add it to txDestination
-  if (active_buffer < buffer_address)
+  uint32_t a = *active_buffer;
+  uint32_t b = (int)(void*)buffer_address;
+  if (a < b)
+    {
     txDestination = (void*)buffer_address;
+    temp1++;
+    }
   else
+    {
     txDestination = ((void*)buffer_address -(int)(ADC_BUFFER_SIZE / 2) * 4);
+    temp++;
+
+    }
 }
 
 /**************************************************************************//**

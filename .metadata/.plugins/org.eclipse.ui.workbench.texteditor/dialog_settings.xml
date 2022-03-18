@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="buffer_address"/>
+		<item key="selection" value="active_buffer"/>
 		<list key="findhistory">
+			<item value="active_buffer"/>
 			<item value="buffer_address"/>
 			<item value="temp"/>
 			<item value="IDLE"/>
@@ -22,7 +23,6 @@
 			<item value="gpio"/>
 			<item value="usartDatabits16"/>
 			<item value="16bit"/>
-			<item value="bit"/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>
