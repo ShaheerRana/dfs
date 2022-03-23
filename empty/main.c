@@ -59,7 +59,7 @@ static volatile uint32_t millivolts;
 static uint8_t first_byte = 0x0;
 static uint8_t second_byte = 0x0;
 
-volatile uint32_t *txDestination = 0;
+volatile uint32_t * volatile txDestination = 0;
 
 // Buffer for ADC single and scan conversion
 volatile uint32_t adcBuffer[ADC_BUFFER_SIZE];
@@ -81,7 +81,7 @@ void LDMA_IRQHandler(void)
 {
   // Clear interrupt flag
   LDMA_IntClear((1 << LDMA_CHANNEL) << _LDMA_IFC_DONE_SHIFT);
-  if ((void*)txDestination)
+  if (txDestination)
     {
       //temp++;
       return;
@@ -271,13 +271,14 @@ void initAdc(void)
   initSingle.singleDmaEm2Wu = 1;
 
   // Add external ADC input. See README for corresponding EXP header pin.
-  initSingle.posSel = adcPosSelAPORT4XCH11;
+  initSingle.posSel = adcPosSelAPORT1YCH7;
 
   // Basic ADC single configuration
   initSingle.diff = false;              // single-ended
   initSingle.reference  = adcRef2V5;    // 2.5V reference
-  initSingle.resolution = adcRes12Bit;  // 12-bit resolution
+  initSingle.resolution = adcResOVS;  // 12-bit resolution
   initSingle.acqTime    = adcAcqTime4;  // set acquisition time to meet minimum requirements
+  init.ovsRateSel = adcOvsRateSel16;
 
   // Enable PRS trigger and select channel 0
   initSingle.prsEnable = true;
@@ -325,7 +326,7 @@ void initOpamp(void)
   // Configure OPA0
   OPAMP_Init_TypeDef init = OPA_INIT_NON_INVERTING;
   init.resInMux = opaResInMuxVss;       // Set the input to the resistor ladder to VSS
-  init.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
+  init.resSel   = opaResSelR2eq3R1;      // Choose the resistor ladder ratio
   init.posSel   = opaPosSelAPORT4XCH11;  // Choose opamp positive input to come from P
   init.outMode  = opaOutModeAPORT1YCH7; // Route opamp output to P
   // Enable OPA0
@@ -387,7 +388,7 @@ int main(void)
 
   // Initialize the ADC and OPAMP
   initAdc();
-  //initOpamp();
+  initOpamp();
   initUSART();
   // Setup DMA to move ADC results to user memory
   initLdma();
@@ -414,13 +415,10 @@ int main(void)
     USART_Tx(USART1, '\n');
   */
       //temp = *txDestination;
-      if (*txDestination)
+      if (txDestination)
       {
           for (int i = 0; i < ADC_BUFFER_SIZE / 2; i++)
             {
-              while (!(USART1->STATUS & USART_STATUS_TXBL)) {
-              } //from em_usart.c
-
               //second_byte = txDestination [i] & 0xff;
               //first_byte = (txDestination [i]>> 8) & 0xff;
 

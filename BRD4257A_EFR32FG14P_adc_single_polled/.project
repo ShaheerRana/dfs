@@ -45,25 +45,5 @@
 			<type>1</type>
 			<locationURI>STUDIO_SDK_LOC/platform/emlib/src/em_core.c</locationURI>
 		</link>
-		<link>
-			<name>src/main_gg11_xg14.c</name>
-			<type>1</type>
-			<location>C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/src/main_gg11_xg14.c</location>
-		</link>
-		<link>
-			<name>src/readme.txt</name>
-			<type>1</type>
-			<location>C:/Users/Co-op Shaheeer R/peripheral_examples/series1/adc/adc_single_polled/readme.txt</location>
-		</link>
-		<link>
-			<name>CMSIS/EFR32FG14P/startup_gcc_efr32fg14p.s</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.S</locationURI>
-		</link>
-		<link>
-			<name>CMSIS/EFR32FG14P/system_efr32fg14p.c</name>
-			<type>1</type>
-			<locationURI>STUDIO_SDK_LOC/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.c</locationURI>
-		</link>
 	</linkedResources>
 </projectDescription>
