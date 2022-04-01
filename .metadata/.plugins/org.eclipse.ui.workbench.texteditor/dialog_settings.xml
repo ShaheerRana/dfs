@@ -6,8 +6,14 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="active_buffer"/>
+		<item key="selection" value="PRS_CH_CTRL_SIGSEL_LETIMER0CH0"/>
 		<list key="findhistory">
+			<item value="PRS_CH_CTRL_SIGSEL_LETIMER0CH0"/>
+			<item value="PRS_CH_CTRL_SIGSEL_TIMER0"/>
+			<item value="timer"/>
+			<item value="SINGLECTRL"/>
+			<item value="ADCn_SINGLECTRL"/>
+			<item value="ADCn_SINGLECTRL "/>
 			<item value="active_buffer"/>
 			<item value="buffer_address"/>
 			<item value="temp"/>
@@ -17,12 +23,6 @@
 			<item value="dst"/>
 			<item value="ch0d"/>
 			<item value="ch0_d"/>
-			<item value="ch0"/>
-			<item value="dstAddr"/>
-			<item value="DSTADDR"/>
-			<item value="gpio"/>
-			<item value="usartDatabits16"/>
-			<item value="16bit"/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>
