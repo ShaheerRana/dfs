@@ -72,7 +72,7 @@ LDMA_Descriptor_t description [2];
 
 volatile uint32_t *buffer_address = NULL;
 
-volatile int temp, temp1;
+volatile int temp = 0, temp1 = 0;
 
 /**************************************************************************//**
  * @brief LDMA Handler
@@ -425,6 +425,9 @@ int main(void)
 
               //USART_Tx(USART1, first_byte);
               //USART_Tx(USART1, second_byte);
+              txDestination[i] = temp++;
+              if (temp > 4095)
+                temp = 0;
               USART_TxDouble (USART1, txDestination[i]);
               //add safety check in between for loops for UART tx
               //txDestination++;

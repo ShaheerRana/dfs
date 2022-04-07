@@ -1,2 +1,3 @@
-2022/03/18-11:58:11.166 20a4 Creating DB C:\Users\Co-op Shaheeer R\SimplicityStudio\dfs\.browser\Default\Session Storage since it was missing.
-2022/03/18-11:58:11.179 20a4 Reusing MANIFEST C:\Users\Co-op Shaheeer R\SimplicityStudio\dfs\.browser\Default\Session Storage/MANIFEST-000001
+2022/04/07-03:34:04.917 4c03 Reusing MANIFEST /Users/shabana/dfs/.browser/Default/Session Storage/MANIFEST-000001
+2022/04/07-03:34:04.920 4c03 Recovering log #3
+2022/04/07-03:34:04.926 4c03 Reusing old log /Users/shabana/dfs/.browser/Default/Session Storage/000003.log 
