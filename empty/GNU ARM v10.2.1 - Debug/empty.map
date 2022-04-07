@@ -4558,22 +4558,22 @@ LOAD linker stubs
  .debug_macro   0x0002edad      0x307 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
  .debug_macro   0x0002f0b4       0xeb ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
-.debug_line     0x00000000     0xed35
- .debug_line    0x00000000      0xe4c ./main.o
- .debug_line    0x00000e4c      0x92c ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
- .debug_line    0x00001778      0xa2d ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
- .debug_line    0x000021a5      0x3e4 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
- .debug_line    0x00002589     0x134f ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
- .debug_line    0x000038d8      0x1e0 ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
- .debug_line    0x00003ab8     0x28e0 ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
- .debug_line    0x00006398     0x10c8 ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
- .debug_line    0x00007460     0x22ec ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
- .debug_line    0x0000974c      0xee4 ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
- .debug_line    0x0000a630      0xe2c ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
- .debug_line    0x0000b45c      0xe28 ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
- .debug_line    0x0000c284      0xc25 ./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o
- .debug_line    0x0000cea9      0xbe3 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
- .debug_line    0x0000da8c     0x12a9 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
+.debug_line     0x00000000     0xed37
+ .debug_line    0x00000000      0xe4e ./main.o
+ .debug_line    0x00000e4e      0x92c ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/GCC/startup_efr32fg14p.o
+ .debug_line    0x0000177a      0xa2d ./gecko_sdk_4.0.0/platform/Device/SiliconLabs/EFR32FG14P/Source/system_efr32fg14p.o
+ .debug_line    0x000021a7      0x3e4 ./gecko_sdk_4.0.0/platform/common/toolchain/src/sl_memory.o
+ .debug_line    0x0000258b     0x134f ./gecko_sdk_4.0.0/platform/emlib/src/em_adc.o
+ .debug_line    0x000038da      0x1e0 ./gecko_sdk_4.0.0/platform/emlib/src/em_assert.o
+ .debug_line    0x00003aba     0x28e0 ./gecko_sdk_4.0.0/platform/emlib/src/em_cmu.o
+ .debug_line    0x0000639a     0x10c8 ./gecko_sdk_4.0.0/platform/emlib/src/em_core.o
+ .debug_line    0x00007462     0x22ec ./gecko_sdk_4.0.0/platform/emlib/src/em_emu.o
+ .debug_line    0x0000974e      0xee4 ./gecko_sdk_4.0.0/platform/emlib/src/em_gpio.o
+ .debug_line    0x0000a632      0xe2c ./gecko_sdk_4.0.0/platform/emlib/src/em_ldma.o
+ .debug_line    0x0000b45e      0xe28 ./gecko_sdk_4.0.0/platform/emlib/src/em_letimer.o
+ .debug_line    0x0000c286      0xc25 ./gecko_sdk_4.0.0/platform/emlib/src/em_opamp.o
+ .debug_line    0x0000ceab      0xbe3 ./gecko_sdk_4.0.0/platform/emlib/src/em_prs.o
+ .debug_line    0x0000da8e     0x12a9 ./gecko_sdk_4.0.0/platform/emlib/src/em_usart.o
 
 .debug_str      0x00000000   0x142ead
  .debug_str     0x00000000   0x13c5cf ./main.o

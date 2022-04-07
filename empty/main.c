@@ -304,7 +304,7 @@ void initUSART (void)
   CMU_ClockEnable(cmuClock_USART1, true);
   CMU_ClockEnable(cmuClock_GPIO, true);
   //init.databits = usartDatabits16;
-  init.baudrate = 300000;
+  init.baudrate = 400000;
   GPIO_PinModeSet(gpioPortC, 6, gpioModePushPull, 1);
   USART_InitAsync(USART1, &init);
   USART1->ROUTELOC0 = USART_ROUTELOC0_RXLOC_LOC11 | USART_ROUTELOC0_TXLOC_LOC11;
@@ -425,9 +425,12 @@ int main(void)
 
               //USART_Tx(USART1, first_byte);
               //USART_Tx(USART1, second_byte);
-              txDestination[i] = temp++;
+              /*txDestination[i] = temp++;
               if (temp > 4095)
+              {
                 temp = 0;
+                temp1++;
+              }*/
               USART_TxDouble (USART1, txDestination[i]);
               //add safety check in between for loops for UART tx
               //txDestination++;
