@@ -6,8 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="next"/>
+		<item key="selection" value="NegPad"/>
 		<list key="findhistory">
+			<item value="negpad"/>
 			<item value="next"/>
 			<item value="letimerDesired"/>
 			<item value="temp"/>
@@ -22,7 +23,6 @@
 			<item value="IDLE"/>
 			<item value="idle"/>
 			<item value="adcBuffer2"/>
-			<item value="dst"/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>
