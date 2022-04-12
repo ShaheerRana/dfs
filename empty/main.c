@@ -46,7 +46,7 @@
 #define ADC_FREQ        4000000
 
 // Desired letimer interrupt frequency (in Hz)
-#define letimerDesired  8000
+#define letimerDesired  32000
 
 #define LDMA_CHANNEL    0
 #define PRS_CHANNEL     0
@@ -190,36 +190,6 @@ void initLdma(void)
   // Clear pending and enable interrupts for LDMA
   NVIC_ClearPendingIRQ(LDMA_IRQn);
   NVIC_EnableIRQ(LDMA_IRQn);
-
-
-
-  /*
-  // Enable CMU clock
-  CMU_ClockEnable(cmuClock_LDMA, true);
-
-  // Basic LDMA configuration
-  LDMA_Init_t ldmaInit = LDMA_INIT_DEFAULT;
-
-  LDMA_Init(&ldmaInit);
-
-  // Transfers trigger off ADC single conversion complete
-  trans = (LDMA_TransferCfg_t)LDMA_TRANSFER_CFG_PERIPHERAL(ldmaPeripheralSignal_ADC0_SINGLE);
-
-  descr = (LDMA_Descriptor_t)LDMA_DESCRIPTOR_LINKREL_P2M_WORD(
-      &(ADC0->SINGLEDATA),  // source
-      adcBuffer,            // destination
-      ADC_BUFFER_SIZE,      // data transfer size
-      0);                   // link relative offset (links to self)
-
-  descr.xfer.blockSize =ADC_DVL-1;    // transfers ADC_DVL number of units per arbitration cycle
-  descr.xfer.ignoreSrec = true;       // ignores single requests to save energy
-
-  // Initialize transfer
-  LDMA_StartTransfer(LDMA_CHANNEL, &trans, &descr);
-
-  // Clear pending and enable interrupts for LDMA
-  NVIC_ClearPendingIRQ(LDMA_IRQn);
-  NVIC_EnableIRQ(LDMA_IRQn);*/
 }
 
 
@@ -231,25 +201,6 @@ void initLdma(void)
  *****************************************************************************/
 void initAdc(void)
 {
-  // Enable ADC clock
-  /*CMU_ClockEnable(cmuClock_ADC0, true);
-
-  // Initialize the ADC
-  ADC_Init_TypeDef init = ADC_INIT_DEFAULT;
-  init.timebase = ADC_TimebaseCalc(0);           // Make sure timebase is at least 1 microsecond
-  init.prescale = ADC_PrescaleCalc(16000000, 0); // Init to max ADC clock for Series 1
-  ADC_Init(ADC0, &init);
-
-  // Set the ADC to use single ended mode
-  ADC_InitSingle_TypeDef initSingle = ADC_INITSINGLE_DEFAULT;
-  initSingle.diff       = 0;                   // Single ended
-  initSingle.reference  = adcRef2V5;           // Internal 2.5V reference
-  initSingle.resolution = adcRes12Bit;         // 12-bit resolution
-  initSingle.acqTime    = adcAcqTime4;  // set acquisition time to meet minimum requirement
-  initSingle.posSel     = adcPosSelAPORT1YCH7; // Choose input to ADC to be on P
-  ADC_InitSingle(ADC0, &initSingle);*/
-
-
   ADC_Init_TypeDef init = ADC_INIT_DEFAULT;
   ADC_InitSingle_TypeDef initSingle = ADC_INITSINGLE_DEFAULT;
   //init.warmUpMode = adcWarmupKeepADCWarm;
@@ -272,13 +223,15 @@ void initAdc(void)
 
   // Add external ADC input. See README for corresponding EXP header pin.
   initSingle.posSel = adcPosSelAPORT1YCH7;
+  initSingle.negSel = adcPosSelVSS;
+
 
   // Basic ADC single configuration
-  initSingle.diff = false;              // single-ended
+  initSingle.diff = true;              // single-ended
   initSingle.reference  = adcRef2V5;    // 2.5V reference
-  initSingle.resolution = adcResOVS;  // 12-bit resolution
+  initSingle.resolution = adcRes12Bit;  // 12-bit resolution
   initSingle.acqTime    = adcAcqTime1;  // set acquisition time to meet minimum requirements
-  init.ovsRateSel = adcOvsRateSel16;
+  //init.ovsRateSel = adcOvsRateSel16;
 
   // Enable PRS trigger and select channel 0
   initSingle.prsEnable = true;
@@ -322,21 +275,22 @@ void initOpamp(void)
 {
   // Enable the VDAC clock for accessing the opamp registers
   CMU_ClockEnable(cmuClock_VDAC0, true); // Enable VDAC clock
-
   // Configure OPA0
-  OPAMP_Init_TypeDef init = OPA_INIT_NON_INVERTING;
+   OPAMP_Init_TypeDef init = OPA_INIT_NON_INVERTING;
   init.resInMux = opaResInMuxVss;       // Set the input to the resistor ladder to VSS
   init.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
   init.posSel   = opaPosSelAPORT4XCH11;  // Choose opamp positive input to come from P
   init.outMode  = opaOutModeAPORT1YCH7; // Route opamp output to P
   // Enable OPA0
   OPAMP_Enable(VDAC0, OPA0, &init);  /*
+ */
 
   // Configure OPA0
+  /*
   OPAMP_Init_TypeDef init0 = OPA_INIT_CASCADED_INVERTING_OPA0;
   init0.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
   init0.posSel   = opaPosSelAPORT4XCH11;  // Choose opamp positive input to come from PC8
-  init0.outMode = opaOutModeAPORT1YCH1; // Route opamp output to PA1
+//init0.outMode = opaOutModeAPORT1YCH1; // Route opamp output to PA1
   init0.resInMux = opaResInMuxNegPad;    // Route negative pad to resistor ladder
 
   // Configure OPA1
@@ -345,24 +299,25 @@ void initOpamp(void)
   init1.posSel  = opaPosSelOpaIn;  // Choose opamp positive input to come from PC9
   init1.resInMux = opaResInMuxNegPad;    // Route negative pad to resistor ladder
   init1.outMode = opaOutModeAPORT1YCH7; // Route opamp output to PA1
-  /*
   OPAMP_Init_TypeDef init0 = OPA_INIT_CASCADED_NON_INVERTING_OPA0;
-  init0.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
-  init0.resInMux = opaResInMuxVss;       // Set the input to the resistor ladder to VSS
+  init0.resSel   = opaResSelR2eqR1;      // Choose the resistor ladder ratio
+  init0.resInMux = opaResInMuxNegPad;       // Set the input to the resistor ladder to VSS
   init0.posSel   = opaPosSelAPORT4XCH11;
-  init0.outMode = opaOutModeAPORT1YCH7;
+  //init0.outMode = opaOutModeAll;
 
   // Configure OPA1
   OPAMP_Init_TypeDef init1 = OPA_INIT_CASCADED_NON_INVERTING_OPA1;
   init1.resSel   = opaResSelR2eqR1;      // Choose the resistor ladder ratio
-  init1.resInMux = VDAC_OPA_MUX_RESINMUX_OPANEXT;       // Set the input to the resistor ladder to VSS
+  init1.resInMux = opaResInMuxVss;       // Set the input to the resistor ladder to VSS
   init1.posSel   = opaPosSelOpaIn;       // Choose opamp positive input to come from OPA0
   init1.outMode  = opaOutModeAPORT1YCH7;
 
-
   // Enable OPA0 and OPA1
   OPAMP_Enable(VDAC0, OPA0, &init0);
-  OPAMP_Enable(VDAC0, OPA1, &init1);*/
+  OPAMP_Enable(VDAC0, OPA1, &init1);
+
+*/
+
 }
 
 /**************************************************************************//**

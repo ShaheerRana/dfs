@@ -6,8 +6,11 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="PRS_CH_CTRL_SIGSEL_LETIMER0CH0"/>
+		<item key="selection" value="next"/>
 		<list key="findhistory">
+			<item value="next"/>
+			<item value="letimerDesired"/>
+			<item value="temp"/>
 			<item value="PRS_CH_CTRL_SIGSEL_LETIMER0CH0"/>
 			<item value="PRS_CH_CTRL_SIGSEL_TIMER0"/>
 			<item value="timer"/>
@@ -16,13 +19,10 @@
 			<item value="ADCn_SINGLECTRL "/>
 			<item value="active_buffer"/>
 			<item value="buffer_address"/>
-			<item value="temp"/>
 			<item value="IDLE"/>
 			<item value="idle"/>
 			<item value="adcBuffer2"/>
 			<item value="dst"/>
-			<item value="ch0d"/>
-			<item value="ch0_d"/>
 		</list>
 		<list key="replacehistory">
 			<item value="BSP_GPIO_PB0_PIN"/>
@@ -30,10 +30,10 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="859"/>
-		<item key="DIALOG_Y_ORIGIN" value="361"/>
+		<item key="DIALOG_X_ORIGIN" value="1120"/>
+		<item key="DIALOG_Y_ORIGIN" value="345"/>
 		<item key="DIALOG_WIDTH" value="284"/>
-		<item key="DIALOG_HEIGHT" value="386"/>
+		<item key="DIALOG_HEIGHT" value="397"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 	</section>
 </section>
