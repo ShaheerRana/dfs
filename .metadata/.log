@@ -3959,3 +3959,27 @@ C Model Exception: C Model Status [Element main.c does not exist.]
 
 !ENTRY org.eclipse.cdt.debug.edc 4 0 2022-04-20 10:10:15.099
 !MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:18:28.399
+!MESSAGE Indexed 'BRD4259A_EFR32FG14P_adc_single_prs_gpio_dma - Copy' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:18:43.125
+!MESSAGE Indexed 'BRD4257A_EFR32FG14P_opamp_to_adc_2' (8 sources, 85 headers) in 2.04 sec: 3,894 declarations; 14,043 references; 0 unresolved inclusions; 27 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:18:58.082
+!MESSAGE Indexed 'BRD4257A_EFR32FG14P_ldma_single_looped' (6 sources, 83 headers) in 1.15 sec: 3,703 declarations; 13,567 references; 0 unresolved inclusions; 27 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:19:03.475
+!MESSAGE Indexed 'BRD4257A_EFR32FG14P_adc_single_prs_gpio_dma_3' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:19:11.386
+!MESSAGE Indexed 'BRD4257A_EFR32FG14P_adc_single_prs_gpio_dma_2' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:20:55.672
+!MESSAGE Indexed 'BRD4257A_EFR32FG14P_adc_single_prs_gpio_dma' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:21:03.760
+!MESSAGE Indexed 'BRD4257A_EFR32FG14P_adc_single_polled' (2 sources, 71 headers) in 0.843 sec: 2,290 declarations; 6,035 references; 0 unresolved inclusions; 20 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:21:10.753
+!MESSAGE Indexed 'BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
