@@ -6,3 +6,4 @@
 1650464469302	Delete resource 'BRD4257A_EFR32FG14P_adc_single_polled'
 1650464479659	Delete resource 'BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma'
 1650465494116	Rename resource 'empty'
+1650475703576	Rename resource 'dfs_radio_prototype'

@@ -3997,3 +3997,12 @@ C Model Exception: C Model Status [Element main.c does not exist.]
 
 !ENTRY org.eclipse.cdt.debug.edc 4 0 2022-04-20 10:38:29.359
 !MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 13:28:25.764
+!MESSAGE Indexed 'dfs_signal_acquisition_prototype' (32 sources, 113 headers) in 1.56 sec: 5,231 declarations; 19,366 references; 0 unresolved inclusions; 27 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-04-20 13:28:37.164
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-04-20 13:28:39.788
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
