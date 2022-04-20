@@ -310,7 +310,7 @@ void initOpamp(void)
   init1.outMode  = opaOutModeAPORT1YCH7;
   */
 
-  /** Cascaded Op-Amps */
+  /** Enable Cascaded Op-Amps */
   /*
   // Enable OPA0 and OPA1
   OPAMP_Enable(VDAC0, OPA0, &init0);
