@@ -5,3 +5,4 @@
 1650464461175	Delete resource 'BRD4257A_EFR32FG14P_adc_single_prs_gpio_dma'
 1650464469302	Delete resource 'BRD4257A_EFR32FG14P_adc_single_polled'
 1650464479659	Delete resource 'BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma'
+1650465494116	Rename resource 'empty'

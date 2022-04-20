@@ -3983,3 +3983,17 @@ C Model Exception: C Model Status [Element main.c does not exist.]
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:21:10.753
 !MESSAGE Indexed 'BRD4257A_EFR32FG14P_adc_single_letimer_prs_dma' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.core.resources 4 1 2022-04-20 10:38:12.281
+!MESSAGE Problems occurred refreshing resources
+!SUBENTRY 1 org.eclipse.core.resources 4 1 2022-04-20 10:38:12.281
+!MESSAGE Problem finding next change, code: 5
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-04-20 10:38:16.660
+!MESSAGE Indexed 'dfs_radio_prototype' (32 sources, 113 headers) in 2.02 sec: 5,231 declarations; 19,366 references; 0 unresolved inclusions; 27 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.silabs.ss.framework.debugger.tcf.agent 1 0 2022-04-20 10:38:26.712
+!MESSAGE Launching SiAgent (Silicon Labs TCF Agent)
+
+!ENTRY org.eclipse.cdt.debug.edc 4 0 2022-04-20 10:38:29.359
+!MESSAGE Unknown context [rc.root.000440136398] is reported in suspended event. Make sure TCF agent has reported contextAdded event first.
