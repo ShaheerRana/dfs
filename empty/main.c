@@ -1,24 +1,3 @@
-/**************************************************************************//**
- * @main_radio14.c
- * @brief This project configures opamp 0 as a non-inverting amplifier whose
- * gain is given by the following equation: Vout = Vin * (1 + R2/R1).
- * By default, this project selects the R2/R1 resistor
- * ladder ratio to be R2 = R1. This results in Vout = Vin * 2. This project also
- * configures the ADC to receive input on the same pin the opamp is outputting
- * to so that the user can enter debug mode to check the ADC conversion of the
- * opamp output.
- * @version 0.0.1
- ******************************************************************************
- * @section License
- * <b>Copyright 2018 Silicon Labs, Inc. http://www.silabs.com</b>
- *******************************************************************************
- *
- * This file is licensed under the Silabs License Agreement. See the file
- * "Silabs_License_Agreement.txt" for details. Before using this software for
- * any purpose, you must agree to the terms of that agreement.
- *
- ******************************************************************************/
-
 #include "em_device.h"
 #include "em_chip.h"
 #include "em_cmu.h"
@@ -31,13 +10,8 @@
 #include "em_ldma.h"
 #include "em_letimer.h"
 
-// Note: change this to one of the OPAMP_ResSel_TypeDef type defines to select
-//       the R2/R1 resistor ladder ratio. By default this is R2 = R1. This
-//       results in Vout = Vin * 2
-#define RESISTOR_SELECT opaResSelR2eqR1
-
-
-#define ADC_BUFFER_SIZE 128 //must be even
+//must be even for DMA to divide in half
+#define ADC_BUFFER_SIZE 128
 
 // Change this to set how many samples get sent at once
 #define ADC_DVL         2
@@ -54,25 +28,24 @@
 // Note: These aren't necessary and are only provided so that they can be viewed
 // in the debugger. Additionally they are declared as volatile so that they
 // won't be optimized out by the compiler
-static volatile uint32_t sample;
-static volatile uint32_t millivolts;
-static uint8_t first_byte = 0x0;
-static uint8_t second_byte = 0x0;
+volatile int temp = 0, temp1 = 0;
 
+//Pointer to the source destination that the application layer code writes from
 volatile uint32_t * volatile txDestination = 0;
 
 // Buffer for ADC single and scan conversion
 volatile uint32_t adcBuffer[ADC_BUFFER_SIZE];
-//uint32_t adcBuffer2[ADC_BUFFER_SIZE];
-uint32_t *active_buffer = NULL;
-uint32_t topValue;
+
+//DMA initialization structures
 LDMA_TransferCfg_t trans;
 LDMA_Descriptor_t descr;
 LDMA_Descriptor_t description [2];
 
+//Will be set as the halfway point of adcBuffer
 volatile uint32_t *buffer_address = NULL;
+//The buffer the DMA is actively writing too
+volatile uint32_t *active_buffer = NULL;
 
-volatile int temp = 0, temp1 = 0;
 
 /**************************************************************************//**
  * @brief LDMA Handler
@@ -81,12 +54,15 @@ void LDMA_IRQHandler(void)
 {
   // Clear interrupt flag
   LDMA_IntClear((1 << LDMA_CHANNEL) << _LDMA_IFC_DONE_SHIFT);
+  //Check if the application layer code is done with transmitting
+  //If not, don't change txDestination
   if (txDestination)
     {
       temp++;
       return;
     }
-  //check an offset that alternates between 0 and halfway and add it to txDestination
+  //Check if the buffer the DMA is actively writing too is the starting point or half way point
+  //Give the application layer code the idle half (not active_buffer)
   uint32_t a = *active_buffer;
   uint32_t b = (int)(void*)buffer_address;
   if (a < b)
@@ -96,9 +72,9 @@ void LDMA_IRQHandler(void)
     }
   else
     {
+    //In C, array indexes increment by 4 not 1, so the difference must be multiplied by 4
     txDestination = ((void*)buffer_address -(int)(ADC_BUFFER_SIZE / 2) * 4);
     //temp++;
-
     }
 }
 
@@ -133,7 +109,7 @@ void initLetimer(void)
   LETIMER_RepeatSet(LETIMER0, 0, 1);
 
   // calculate the topValue
-   topValue = CMU_ClockFreqGet(cmuClock_LETIMER0) / letimerDesired;
+  uint32_t topValue = CMU_ClockFreqGet(cmuClock_LETIMER0) / letimerDesired;
 
   // Compare on wake-up interval count
   LETIMER_CompareSet(LETIMER0, 0, topValue);
@@ -156,6 +132,7 @@ void initLdma(void)
 
   // Basic LDMA configuration
   LDMA_Init_t ldmaInit = LDMA_INIT_DEFAULT;
+  // Set buffer_address to the half way point of adcBuffer to setup ping pong DMA
   buffer_address = &(adcBuffer[ADC_BUFFER_SIZE / 2]);
 
   LDMA_Init(&ldmaInit);
@@ -164,26 +141,27 @@ void initLdma(void)
   trans = (LDMA_TransferCfg_t)LDMA_TRANSFER_CFG_PERIPHERAL(ldmaPeripheralSignal_ADC0_SINGLE);
 
   description [0]= (LDMA_Descriptor_t)LDMA_DESCRIPTOR_LINKREL_P2M_WORD(
-      &(ADC0->SINGLEDATA),  // source
-      adcBuffer,            // destination
-      ADC_BUFFER_SIZE / 2,      // data transfer size
-      1);                   // link relative offset (links to self)
+      &(ADC0->SINGLEDATA),  // source is from ADC sample
+      adcBuffer,            // destination is the shared buffer between application layer and DMA
+      ADC_BUFFER_SIZE / 2,      // data transfer size is half the buffer size
+      1);                   // link relative offset (links to next half)
 
   description[0].xfer.blockSize =ADC_DVL-1;    // transfers ADC_DVL number of units per arbitration cycle
   description[0].xfer.ignoreSrec = true;       // ignores single requests to save energy
 
 
   description [1]= (LDMA_Descriptor_t)LDMA_DESCRIPTOR_LINKREL_P2M_WORD(
-      &(ADC0->SINGLEDATA),  // source
-      buffer_address,            // destination
-      ADC_BUFFER_SIZE / 2,      // data transfer size
-      -1);                   // link relative offset (links to self)
+      &(ADC0->SINGLEDATA),  // source is from ADC sample
+      buffer_address,            // destination is the shared buffer between application layer and DMA
+      ADC_BUFFER_SIZE / 2,      // data transfer size is half the buffer size
+      -1);                   // link relative offset (links to previous half)
 
   description[1].xfer.blockSize =ADC_DVL-1;    // transfers ADC_DVL number of units per arbitration cycle
   description[1].xfer.ignoreSrec = true;       // ignores single requests to save energy
 
+  //There are 2 pointer warnings here but it works
+  //Set active_buffer address to the active buffer register, 0x094 offset is from the datasheet
   active_buffer = (int*)(LDMA_BASE + 0x094);
-  //*buffer_address = active_buffer;
   // Initialize transfer
   LDMA_StartTransfer(LDMA_CHANNEL, &trans, &description);
 
@@ -201,9 +179,13 @@ void initLdma(void)
  *****************************************************************************/
 void initAdc(void)
 {
+  // Default initialization structure
   ADC_Init_TypeDef init = ADC_INIT_DEFAULT;
   ADC_InitSingle_TypeDef initSingle = ADC_INITSINGLE_DEFAULT;
+
+  //Not sure if keeping the ADC warm, worth testing to see if it speeds up sampling time
   //init.warmUpMode = adcWarmupKeepADCWarm;
+
   // Enable ADC clock
   CMU_ClockEnable(cmuClock_HFPER, true);
   CMU_ClockEnable(cmuClock_ADC0, true);
@@ -212,6 +194,7 @@ void initAdc(void)
   CMU->ADCCTRL = CMU_ADCCTRL_ADC0CLKSEL_AUXHFRCO;
 
   // Set AUXHFRCO frequency and use it to setup the ADC
+  //Need to understand why the ADC fails past 7MHz, could be because of EM2 power constraints?
   CMU_AUXHFRCOFreqSet(cmuAUXHFRCOFreq_7M0Hz);
   init.timebase = ADC_TimebaseCalc(CMU_AUXHFRCOBandGet());
   init.prescale = ADC_PrescaleCalc(ADC_FREQ, CMU_AUXHFRCOBandGet());
@@ -223,13 +206,16 @@ void initAdc(void)
 
   // Add external ADC input. See README for corresponding EXP header pin.
   initSingle.posSel = adcPosSelAPORT1YCH7;
+  //Differential vs single doesn't seem to do anything since VSS is ground
   initSingle.negSel = adcPosSelVSS;
 
 
   // Basic ADC single configuration
   initSingle.diff = true;              // single-ended
+  //Adjust to be lower based on the max input signal after op-amp gains
   initSingle.reference  = adcRef2V5;    // 2.5V reference
   initSingle.resolution = adcRes12Bit;  // 12-bit resolution
+  //Faster acquisition times are necessary to meet sampling frequency requirements, especially when OVS is active
   initSingle.acqTime    = adcAcqTime1;  // set acquisition time to meet minimum requirements
   //init.ovsRateSel = adcOvsRateSel16;
 
@@ -249,20 +235,24 @@ void initAdc(void)
 
 }
 
-
+/**************************************************************************//**
+ * @brief
+ *    Initialize UART
+ *****************************************************************************/
 void initUSART (void)
 {
-
+  //Default UART structure
   USART_InitAsync_TypeDef init = USART_INITASYNC_DEFAULT;
+  //UART clock config
   CMU_ClockEnable(cmuClock_USART1, true);
   CMU_ClockEnable(cmuClock_GPIO, true);
-  //init.databits = usartDatabits16;
+  //Rate at which bits are transmitted. Receiving end must match
   init.baudrate = 400000;
+  //Pin C6 is Pin 4 (SPI_MOSI) on the expansion header for the eval board
   GPIO_PinModeSet(gpioPortC, 6, gpioModePushPull, 1);
   USART_InitAsync(USART1, &init);
   USART1->ROUTELOC0 = USART_ROUTELOC0_RXLOC_LOC11 | USART_ROUTELOC0_TXLOC_LOC11;
   USART1->ROUTEPEN |= USART_ROUTEPEN_TXPEN | USART_ROUTEPEN_RXPEN;
-  //LDMA_BASE + 0x010
   //uint32_t uart_idle = USART1->STATUS & USART_STATUS_TXIDLE;
 
 }
@@ -273,10 +263,12 @@ void initUSART (void)
  *****************************************************************************/
 void initOpamp(void)
 {
+  /** Single Non-Inverting Op-Amp */
+
   // Enable the VDAC clock for accessing the opamp registers
   CMU_ClockEnable(cmuClock_VDAC0, true); // Enable VDAC clock
   // Configure OPA0
-   OPAMP_Init_TypeDef init = OPA_INIT_NON_INVERTING;
+  OPAMP_Init_TypeDef init = OPA_INIT_NON_INVERTING;
   init.resInMux = opaResInMuxVss;       // Set the input to the resistor ladder to VSS
   init.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
   init.posSel   = opaPosSelAPORT4XCH11;  // Choose opamp positive input to come from P
@@ -285,8 +277,9 @@ void initOpamp(void)
   OPAMP_Enable(VDAC0, OPA0, &init);  /*
  */
 
-  // Configure OPA0
+  /** Cascaded Inverting Op-Amps */
   /*
+  // Configure OPA0
   OPAMP_Init_TypeDef init0 = OPA_INIT_CASCADED_INVERTING_OPA0;
   init0.resSel   = opaResSelR2eq0_33R1;      // Choose the resistor ladder ratio
   init0.posSel   = opaPosSelAPORT4XCH11;  // Choose opamp positive input to come from PC8
@@ -299,6 +292,10 @@ void initOpamp(void)
   init1.posSel  = opaPosSelOpaIn;  // Choose opamp positive input to come from PC9
   init1.resInMux = opaResInMuxNegPad;    // Route negative pad to resistor ladder
   init1.outMode = opaOutModeAPORT1YCH7; // Route opamp output to PA1
+  */
+
+  /** Cascaded Non-Inverting Op-Amps */
+  /*
   OPAMP_Init_TypeDef init0 = OPA_INIT_CASCADED_NON_INVERTING_OPA0;
   init0.resSel   = opaResSelR2eqR1;      // Choose the resistor ladder ratio
   init0.resInMux = opaResInMuxNegPad;       // Set the input to the resistor ladder to VSS
@@ -311,12 +308,14 @@ void initOpamp(void)
   init1.resInMux = opaResInMuxVss;       // Set the input to the resistor ladder to VSS
   init1.posSel   = opaPosSelOpaIn;       // Choose opamp positive input to come from OPA0
   init1.outMode  = opaOutModeAPORT1YCH7;
+  */
 
+  /** Enable Cascaded Op-Amps */
+  /*
   // Enable OPA0 and OPA1
   OPAMP_Enable(VDAC0, OPA0, &init0);
   OPAMP_Enable(VDAC0, OPA1, &init1);
-
-*/
+  */
 
 }
 
@@ -345,52 +344,21 @@ int main(void)
   // Initialize the ADC and OPAMP
   initAdc();
   initOpamp();
+  // Initialize the UART to transmit ddata
   initUSART();
   // Setup DMA to move ADC results to user memory
   initLdma();
-  // Set up LETIMER to trigger ADC via PRS in 500ms intervals
+  // Set up LETIMER to trigger ADC via PRS at specified frequency
   initLetimer();
 
 
   while (1)
     {
-      /*
-    // Start the ADC conversion
-    ADC_Start(ADC0, adcStartSingle);
-
-    // Wait for conversion to complete
-    while(!(ADC0->STATUS & _ADC_STATUS_SINGLEDV_MASK));
-
-    // Get ADC result
-    sample = ADC_DataSingleGet(ADC0);
-
-    // Calculate input voltage in mV
-    // mV = (sample * 2.5Vref * 1000) / (2^12 bit resolution)
-    millivolts = (sample * 2500) / 4096;
-    USART_Tx(USART1, millivolts);
-    USART_Tx(USART1, '\n');
-  */
-      //temp = *txDestination;
       if (txDestination)
       {
           for (int i = 0; i < ADC_BUFFER_SIZE / 2; i++)
             {
-              //second_byte = txDestination [i] & 0xff;
-              //first_byte = (txDestination [i]>> 8) & 0xff;
-
-              //USART_Tx(USART1, first_byte);
-              //USART_Tx(USART1, second_byte);
-              /*txDestination[i] = temp++;
-              if (temp > 4095)
-              {
-                temp = 0;
-                temp1++;
-              }*/
               USART_TxDouble (USART1, txDestination[i]);
-              //add safety check in between for loops for UART tx
-              //txDestination++;
-              //txDestination = (void*)txDestination + 4;
-
             }
           txDestination = 0;
       }
