@@ -1,4 +1,4 @@
-A project for Dragonfly Systems
+###Dragonfly Systems Radio Prototype
 
 Bundled with: https://github.com/ShaheerRana/dfs_python
 
