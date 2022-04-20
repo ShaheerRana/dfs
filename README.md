@@ -6,4 +6,4 @@ Documentation: https://docs.google.com/document/d/1IdYj9-gSD8sQ_Fm9o52Bac-QeyTVP
 
 Use with SimplicityStudio IDE
 
-gecko_sdk built in, navigate project_name\gecko_sdk_4.0.0\platform\emlib to view source library files
+gecko_sdk built in, navigate to project_name\gecko_sdk_4.0.0\platform\emlib to view source library files
